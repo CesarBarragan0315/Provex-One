@@ -493,16 +493,13 @@ export function initAdminPricing() {
     return;
   }
 
-  // 1. Mostrar botones de acceso al admin
+  // 1. Mostrar botón de acceso al admin en nav
   const adminNavBtn = document.getElementById("adminPricingBtn");
   if (adminNavBtn) adminNavBtn.hidden = false;
 
-  const adminBanner = document.getElementById("adminPricingBanner");
-  if (adminBanner) adminBanner.hidden = false;
-
   // 2. Vincular apertura y cierre de modal
   const modal = document.getElementById("adminPricingModal");
-  const openButtons = [adminNavBtn, document.getElementById("adminPricingOpenBtn")].filter(Boolean);
+  const openButtons = [adminNavBtn].filter(Boolean);
   const closeButtons = [
     document.getElementById("adminPricingCloseBtn"),
     document.getElementById("adminPricingModalClose"),

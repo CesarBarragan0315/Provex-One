@@ -201,8 +201,6 @@ function setLoggedOutUi() {
 
   const adminBtn = document.getElementById("adminPricingBtn");
   if (adminBtn) adminBtn.hidden = true;
-  const adminBanner = document.getElementById("adminPricingBanner");
-  if (adminBanner) adminBanner.hidden = true;
 }
 
 function setAuthenticatedUi() {
@@ -228,8 +226,6 @@ function setAuthenticatedUi() {
   const isAdmin = isPriceAdminUser();
   const adminBtn = document.getElementById("adminPricingBtn");
   if (adminBtn) adminBtn.hidden = !isAdmin;
-  const adminBanner = document.getElementById("adminPricingBanner");
-  if (adminBanner) adminBanner.hidden = !isAdmin;
 
   updateAuthStatus(`Conectado como ${getDisplayName()}`);
 }
