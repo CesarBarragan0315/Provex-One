@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Provex One</title>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -50,7 +51,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Provex One">
   <link rel="apple-touch-icon" sizes="180x180" href="icons/provex_icon_180.png">
-  <link rel="stylesheet" href="css/styles.css?v=20260925e">
+  <link rel="stylesheet" href="css/styles.css?v=20261002">
 </head>
 <body class="app-body auth-pending bg-bg text-primary min-h-screen font-sans antialiased" style="letter-spacing:-0.022em">
   <!-- Mantenimiento para futuras actualizaciones
@@ -115,6 +116,9 @@
           <div class="brand-title">Provex One</div>
           <div id="authUser" class="auth-user" hidden></div>
         </div>
+        <button type="button" id="adminPricingBtn" class="admin-pricing-button" hidden title="Actualización de Precios (Exclusivo)">
+          ⚙️ Cargar Precios
+        </button>
         <button type="button" id="authLogoutBtn" class="auth-logout-button" hidden>
           Cerrar sesion
         </button>
@@ -146,6 +150,16 @@
         </button>
       </div>
     </section>
+
+    <div id="adminPricingBanner" class="admin-pricing-banner" hidden>
+      <div class="admin-pricing-banner-text">
+        <span class="admin-banner-badge">Panel Exclusivo</span>
+        <strong>Actualización de Listas de Precios:</strong> Carga archivos Excel de Microsoft y Acronis para actualizar el cotizador.
+      </div>
+      <button type="button" id="adminPricingOpenBtn" class="admin-banner-btn">
+        Abrir Gestor de Precios
+      </button>
+    </div>
 
     <section id="cloudView" class="workspace-view" role="tabpanel" aria-labelledby="cloudWorkspaceTab">
     <!-- SEARCH CARD -->
@@ -555,6 +569,118 @@
     </section>
   </main>
   </div>
+
+  <!-- MODAL DE ADMINISTRACIÓN DE PRECIOS (EXCLUSIVO PARA analista.tecnico@provexpress.com.co) -->
+  <section id="adminPricingModal" class="admin-modal" hidden aria-modal="true" role="dialog" aria-labelledby="adminPricingTitle">
+    <div class="admin-modal-card">
+      <div class="admin-modal-header">
+        <div>
+          <div class="admin-modal-eyebrow">Administración de Precios</div>
+          <h2 id="adminPricingTitle" class="admin-modal-title">Carga de Nuevos Precios Provex One</h2>
+          <p class="admin-modal-subtitle">Acceso exclusivo: analista.tecnico@provexpress.com.co</p>
+        </div>
+        <button type="button" id="adminPricingModalClose" class="admin-modal-close" aria-label="Cerrar modal">&times;</button>
+      </div>
+
+      <div class="admin-modal-body">
+        <div class="admin-notice">
+          <p class="admin-notice-title">📌 Instrucciones de Actualización</p>
+          <p class="admin-notice-text">
+            Arrastra o selecciona los archivos Excel oficiales de <strong>Microsoft (3 mayoristas)</strong> y <strong>Acronis Cyber Cloud</strong>.
+            El sistema procesa automáticamente las listas en tu navegador, calculando márgenes, términos y equivalencias.
+            Puedes publicar los cambios a GitHub Pages (disponible para todos en 1-2 minutos) o probarlos inmediatamente en tu sesión.
+          </p>
+        </div>
+
+        <div class="admin-grid">
+          <!-- CARD MICROSOFT -->
+          <div class="admin-catalog-card">
+            <div class="admin-catalog-header">
+              <span class="admin-catalog-dot dot-ms"></span>
+              <div>
+                <h3 class="admin-catalog-title">1. Lista Microsoft 365 / Cloud</h3>
+                <p class="admin-catalog-desc">Excel con hojas NCE, Perpetuo y Suscripciones</p>
+              </div>
+            </div>
+
+            <div id="adminMsDropZone" class="admin-dropzone" tabindex="0" role="button" aria-label="Cargar Excel de Microsoft">
+              <div class="admin-dropzone-icon">📊</div>
+              <div class="admin-dropzone-text">
+                <strong>Haz clic o arrastra aquí</strong> el Excel de Microsoft
+              </div>
+              <div class="admin-dropzone-hint">Formatos aceptados: .xlsx</div>
+              <input type="file" id="adminMsFileInput" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" hidden>
+            </div>
+
+            <div id="adminMsStatus" class="admin-status-box">Esperando archivo Excel de Microsoft...</div>
+
+            <div class="admin-card-actions">
+              <button type="button" id="adminDownloadMsBtn" class="admin-btn-secondary" disabled>
+                ⬇ Descargar products.json
+              </button>
+            </div>
+          </div>
+
+          <!-- CARD ACRONIS -->
+          <div class="admin-catalog-card">
+            <div class="admin-catalog-header">
+              <span class="admin-catalog-dot dot-acronis"></span>
+              <div>
+                <h3 class="admin-catalog-title">2. Lista Acronis Cyber Cloud</h3>
+                <p class="admin-catalog-desc">Excel con hojas Solution-based, Service-based y DCs</p>
+              </div>
+            </div>
+
+            <div id="adminAcronisDropZone" class="admin-dropzone" tabindex="0" role="button" aria-label="Cargar Excel de Acronis">
+              <div class="admin-dropzone-icon">☁️</div>
+              <div class="admin-dropzone-text">
+                <strong>Haz clic o arrastra aquí</strong> el Excel de Acronis
+              </div>
+              <div class="admin-dropzone-hint">Formatos aceptados: .xlsx</div>
+              <input type="file" id="adminAcronisFileInput" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" hidden>
+            </div>
+
+            <div id="adminAcronisStatus" class="admin-status-box">Esperando archivo Excel de Acronis...</div>
+
+            <div class="admin-card-actions">
+              <button type="button" id="adminDownloadAcronisBtn" class="admin-btn-secondary" disabled>
+                ⬇ Descargar acronis_products.json
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECCIÓN DE PUBLICACIÓN GITHUB Y PRUEBA EN VIVO -->
+        <div class="admin-publish-section">
+          <div class="admin-publish-header">
+            <h3 class="admin-publish-title">🚀 Publicación en GitHub Pages (Global para Provexpress)</h3>
+            <p class="admin-publish-desc">
+              Ingresa tu GitHub Personal Access Token (con permiso <code>repo</code> o <code>contents:write</code>). Se guardará únicamente en este navegador para futuras actualizaciones.
+            </p>
+          </div>
+
+          <div class="admin-token-row">
+            <label for="adminGhToken" class="admin-token-label">GitHub Token:</label>
+            <input type="password" id="adminGhToken" class="admin-token-input" placeholder="ghp_xxxxxxxxxxxx o github_pat_xxxxxxx" autocomplete="off">
+          </div>
+
+          <div id="adminPublishStatus" class="admin-status-box"></div>
+
+          <div class="admin-modal-footer">
+            <button type="button" id="adminPublishBtn" class="admin-btn-primary" disabled>
+              🚀 Publicar a GitHub (Actualizar a Todos)
+            </button>
+            <button type="button" id="adminApplySessionBtn" class="admin-btn-accent" disabled>
+              ⚡ Probar en esta sesión
+            </button>
+            <button type="button" id="adminPricingCloseBtn" class="admin-btn-muted">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <script type="module" src="js/app.js"></script>
   <script>

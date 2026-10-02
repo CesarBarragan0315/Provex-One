@@ -194,6 +194,19 @@ function bindEvents() {
   if (elements.searchClearBtn) {
     elements.searchClearBtn.addEventListener("click", handleSearchClearClick);
   }
+
+  window.addEventListener("provex:update-products", (e) => {
+    if (Array.isArray(e.detail)) {
+      state.products = e.detail.map(enrichProduct);
+      if (elements.totalCount) {
+        elements.totalCount.textContent = `${state.products.length.toLocaleString("es-CO")} productos - 3 mayoristas`;
+      }
+      syncCloudFilterOptions();
+      updateSearchSuggestions();
+      renderSearchWarning();
+      runSearch();
+    }
+  });
   elements.searchSuggestions.addEventListener("click", handleSuggestionClick);
   elements.selectedProductsList.addEventListener("click", handleSelectedProductRemove);
   elements.clearSelectedProducts.addEventListener("click", clearSelectedProducts);
@@ -377,7 +390,7 @@ async function loadProducts() {
   state.loadError = false;
 
   try {
-    const data = await fetchCatalogData(CLOUD_CATALOG_PATHS);
+    const data = window.__CUSTOM_PRODUCTS || (await fetchCatalogData(CLOUD_CATALOG_PATHS));
     state.products = Array.isArray(data)
       ? data.map(enrichProduct)
       : [];

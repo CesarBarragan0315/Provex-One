@@ -1,4 +1,4 @@
-const CACHE_NAME = 'provex-one-v51';
+const CACHE_NAME = 'provex-one-v52';
 
 const STATIC_ASSETS = [
   './',
@@ -12,6 +12,7 @@ const STATIC_ASSETS = [
   './js/kaspersky.js',
   './js/tables.js',
   './js/trm.js',
+  './js/admin-pricing.js',
   './manifest.json',
   './icons/icono-provexpress.png',
   './icons/logo.webp',

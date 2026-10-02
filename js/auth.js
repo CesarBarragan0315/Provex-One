@@ -1,5 +1,17 @@
 import { loginRequest, microsoftEntraConfig } from "./auth-config.js";
 
+export const ADMIN_PRICE_EMAIL = "analista.tecnico@provexpress.com.co";
+
+export function isPriceAdminUser() {
+  const accountEmail = (
+    state.currentAccount?.username ||
+    state.currentAccount?.idTokenClaims?.preferred_username ||
+    state.currentAccount?.idTokenClaims?.email ||
+    ""
+  ).toLowerCase().trim();
+  return accountEmail === ADMIN_PRICE_EMAIL.toLowerCase();
+}
+
 const MSAL_SOURCES = [
   "https://alcdn.msauth.net/browser/2.38.3/js/msal-browser.min.js",
   "https://cdn.jsdelivr.net/npm/@azure/msal-browser@2.38.3/lib/msal-browser.min.js",
@@ -141,17 +153,29 @@ async function unlockApp() {
   setAuthenticatedUi();
 
   if (!state.appBooted) {
-    const modules = await Promise.allSettled([
+    const modulesToLoad = [
       import("./search.js"),
       import("./acronis.js"),
       import("./kaspersky.js"),
-    ]);
+    ];
+    if (isPriceAdminUser()) {
+      modulesToLoad.push(
+        import("./admin-pricing.js")
+          .then((m) => m.initAdminPricing?.())
+          .catch((err) => console.error("Admin pricing init error", err))
+      );
+    }
+    const modules = await Promise.allSettled(modulesToLoad);
     modules.forEach((moduleResult) => {
       if (moduleResult.status === "rejected") {
         console.error("Provex One module init error", moduleResult.reason);
       }
     });
     state.appBooted = true;
+  } else if (isPriceAdminUser()) {
+    import("./admin-pricing.js")
+      .then((m) => m.initAdminPricing?.())
+      .catch((err) => console.error("Admin pricing init error", err));
   }
 }
 
@@ -174,6 +198,11 @@ function setLoggedOutUi() {
   if (elements.authConnectBtn) {
     elements.authConnectBtn.disabled = false;
   }
+
+  const adminBtn = document.getElementById("adminPricingBtn");
+  if (adminBtn) adminBtn.hidden = true;
+  const adminBanner = document.getElementById("adminPricingBanner");
+  if (adminBanner) adminBanner.hidden = true;
 }
 
 function setAuthenticatedUi() {
@@ -195,6 +224,12 @@ function setAuthenticatedUi() {
   if (elements.authConnectBtn) {
     elements.authConnectBtn.disabled = false;
   }
+
+  const isAdmin = isPriceAdminUser();
+  const adminBtn = document.getElementById("adminPricingBtn");
+  if (adminBtn) adminBtn.hidden = !isAdmin;
+  const adminBanner = document.getElementById("adminPricingBanner");
+  if (adminBanner) adminBanner.hidden = !isAdmin;
 
   updateAuthStatus(`Conectado como ${getDisplayName()}`);
 }

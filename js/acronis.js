@@ -83,11 +83,15 @@ async function initialize() {
   });
 
   try {
-    const response = await fetch(CATALOG_PATH);
-    if (!response.ok) {
-      throw new Error(`Acronis catalog request failed with status ${response.status}`);
+    if (window.__CUSTOM_ACRONIS) {
+      state.data = window.__CUSTOM_ACRONIS;
+    } else {
+      const response = await fetch(CATALOG_PATH);
+      if (!response.ok) {
+        throw new Error(`Acronis catalog request failed with status ${response.status}`);
+      }
+      state.data = await response.json();
     }
-    state.data = await response.json();
     populateControls();
     ensureOpenCategory();
     renderCatalog();
@@ -105,6 +109,16 @@ async function initialize() {
 }
 
 function bindEvents() {
+  window.addEventListener("provex:update-acronis", (e) => {
+    if (e.detail && (e.detail.solution || e.detail.service)) {
+      state.data = e.detail;
+      populateControls();
+      ensureOpenCategory();
+      renderCatalog();
+      updateSummary();
+    }
+  });
+
   elements.workspaceTabs.forEach((tab) => {
     tab.addEventListener("click", () => activateWorkspace(tab.dataset.workspace));
   });
