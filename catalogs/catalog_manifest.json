@@ -1,1 +1,25 @@
-{"areas":[{"id":"cloud","label":"Licencias Microsoft","kind":"comparison","catalog":"cloud_products.json","records":3248},{"id":"acronis","label":"Calculadora Acronis","kind":"calculator","catalog":"acronis_products.json","records":106},{"id":"kaspersky","label":"Licencias Kaspersky","kind":"comparison","catalog":"kaspersky_products.json","records":209}]}
+{
+  "areas": [
+    {
+      "id": "cloud",
+      "label": "Licencias Microsoft",
+      "kind": "comparison",
+      "catalog": "cloud_products.json",
+      "records": 3334
+    },
+    {
+      "id": "acronis",
+      "label": "Calculadora Acronis",
+      "kind": "calculator",
+      "catalog": "acronis_products.json",
+      "records": 106
+    },
+    {
+      "id": "kaspersky",
+      "label": "Licencias Kaspersky",
+      "kind": "comparison",
+      "catalog": "kaspersky_products.json",
+      "records": 209
+    }
+  ]
+}
