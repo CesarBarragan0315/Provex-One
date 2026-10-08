@@ -416,15 +416,22 @@ export function parseAcronisWorkbook(workbook) {
 
 // ── INTEGRACIÓN CON GITHUB API ──
 
+function sanitizeGithubHeaderValue(value) {
+  return String(value ?? "")
+    .replace(/\r?\n/g, " ")
+    .replace(/[\u0080-\uFFFF]/g, "");
+}
+
 async function getGitHubFileSha(owner, repo, path, token) {
   const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+  const headers = new Headers({
+    Authorization: `Bearer ${sanitizeGithubHeaderValue(token)}`,
+    Accept: "application/vnd.github+json",
+    "X-GitHub-Api-Version": "2022-11-28",
+  });
+
   try {
-    const res = await fetch(url, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        Accept: "application/vnd.github+json",
-      },
-    });
+    const res = await fetch(url, { headers });
     if (res.ok) {
       const data = await res.json();
       return data.sha || null;
@@ -448,7 +455,7 @@ async function putGitHubFile(owner, repo, path, jsonPayload, commitMessage, toke
   const base64Content = btoa(binary);
 
   const body = {
-    message: commitMessage,
+    message: String(commitMessage ?? "").replace(/[\u0080-\uFFFF]/g, ""),
     content: base64Content,
     branch: "master",
   };
@@ -456,13 +463,16 @@ async function putGitHubFile(owner, repo, path, jsonPayload, commitMessage, toke
     body.sha = sha;
   }
 
+  const headers = new Headers({
+    Authorization: `Bearer ${sanitizeGithubHeaderValue(token)}`,
+    Accept: "application/vnd.github+json",
+    "Content-Type": "application/json",
+    "X-GitHub-Api-Version": "2022-11-28",
+  });
+
   const res = await fetch(url, {
     method: "PUT",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Accept: "application/vnd.github+json",
-      "Content-Type": "application/json",
-    },
+    headers,
     body: JSON.stringify(body),
   });
 
