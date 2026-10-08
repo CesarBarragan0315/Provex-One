@@ -1,1 +1,2675 @@
-{"source":"Acronis_Cyber_Cloud_Calculator_C2609_USD.xlsx","currency":"USD","priceList":"C26/09","commitments":[250,500,1000,2000,4000,7000,10000],"datacenters":{"G1":[{"label":"Phoenix, USA","city":"Phoenix","country":"USA"},{"label":"Ashburn, USA","city":"Ashburn","country":"USA"},{"label":"Frankfurt, Germany","city":"Frankfurt","country":"Germany"},{"label":"Lupfig, Switzerland","city":"Lupfig","country":"Switzerland"},{"label":"London, UK","city":"London","country":"UK"},{"label":"Nagano, Japan","city":"Nagano","country":"Japan"},{"label":"Kanagawa, Japan","city":"Kanagawa","country":"Japan"},{"label":"Cologne, Germany","city":"Cologne","country":"Germany"},{"label":"Strasbourg, France","city":"Strasbourg","country":"France"},{"label":"St.Louis, USA","city":"St.Louis","country":"USA"},{"label":"Singapore, Singapore","city":"Singapore","country":"Singapore"},{"label":"Sydney, Australia","city":"Sydney","country":"Australia"},{"label":"Vancouver, Canada","city":"Vancouver","country":"Canada"},{"label":"Toronto, Canada","city":"Toronto","country":"Canada"},{"label":"Auckland, New Zealand","city":"Auckland","country":"New Zealand"},{"label":"Balzers, Liechtenstein","city":"Balzers","country":"Liechtenstein"},{"label":"Jakarta, Indonesia","city":"Jakarta","country":"Indonesia"},{"label":"Mumbai, India","city":"Mumbai","country":"India"},{"label":"Valencia, Spain","city":"Valencia","country":"Spain"},{"label":"Tel Aviv, Israel","city":"Tel Aviv","country":"Israel"},{"label":"Lisbon, Portugal","city":"Lisbon","country":"Portugal"},{"label":"Seoul, Korea","city":"Seoul","country":"Korea"},{"label":"Prague, Czech Republic","city":"Prague","country":"Czech Republic"},{"label":"Thessaloniki, Greece","city":"Thessaloniki","country":"Greece"},{"label":"Sao Paulo, Brazil","city":"Sao Paulo","country":"Brazil"},{"label":"Warsaw, Poland","city":"Warsaw","country":"Poland"},{"label":"Vienna, Austria","city":"Vienna","country":"Austria"},{"label":"Billund, Denmark","city":"Billund","country":"Denmark"},{"label":"Sofia, Bulgaria","city":"Sofia","country":"Bulgaria"},{"label":"Istanbul, Turkey","city":"Istanbul","country":"Turkey"},{"label":"Oslo, Norway","city":"Oslo","country":"Norway"},{"label":"Helsinki, Finland","city":"Helsinki","country":"Finland"},{"label":"Rome, Italy","city":"Rome","country":"Italy"},{"label":"Goteborg, Sweden","city":"Goteborg","country":"Sweden"},{"label":"Mexico City, Mexico","city":"Mexico City","country":"Mexico"},{"label":"Kuala Lumpur, Malaysia","city":"Kuala Lumpur","country":"Malaysia"}],"G2":[{"label":"Johannesburg, South Africa","city":"Johannesburg","country":"South Africa"},{"label":"Abu Dhabi, UAE","city":"Abu Dhabi","country":"UAE"},{"label":"Taipei, Taiwan","city":"Taipei","country":"Taiwan"}]},"solution":[{"id":"solution-8","category":"Security + RMM","subcategory":"","description":"# Endpoint Security (Servers, VMs, Workstations)","note":"Disponible de forma independiente","prices":{"All":[2.8,2.6,2.29,1.99,1.65,1.58,1.5]},"skus":{"All":"SESDMSENS"}},{"id":"solution-9","category":"Security + RMM","subcategory":"","description":"# Microsoft 365 Security","note":"","prices":{"All":[3.2,3.1,3.01,2.86,2.72,2.61,2.51]},"skus":{"All":"SESEMSENS"}},{"id":"solution-10","category":"Security + RMM","subcategory":"","description":"# Google Workspace Security","note":"","prices":{"All":[2.4,2.33,2.26,2.15,2.04,1.96,1.88]},"skus":{"All":"SESFMSENS"}},{"id":"solution-11","category":"Backup + DR","subcategory":"","description":"# BDR Server (3 TB of Acronis Hosted Storage included)","note":"Disponible de forma independiente","prices":{"G1":[65.0,60.45,55.61,50.05,46.05,44.21,42.0],"G2":[81.5,75.8,69.74,62.77,57.75,55.44,52.67]},"skus":{"G1":"SBDAMSENS","G2":"SBDHMSENS"}},{"id":"solution-12","category":"Backup + DR","subcategory":"","description":"# BDR Virtual Machine (2 TB of Acronis Hosted Storage included)","note":"","prices":{"G1":[45.0,41.85,38.5,34.65,31.88,30.6,29.07],"G2":[56.5,52.55,48.35,43.52,40.04,38.44,36.52]},"skus":{"G1":"SBDBMSENS","G2":"SBDIMSENS"}},{"id":"solution-13","category":"Backup + DR","subcategory":"","description":"# BDR Workstation (300 GB of Acronis Hosted Storage included)","note":"","prices":{"G1":[9.0,8.37,7.7,6.55,5.9,5.55,5.11],"G2":[11.3,10.51,9.67,8.51,7.74,7.28,6.84]},"skus":{"G1":"SBDCMSENS","G2":"SBDJMSENS"}},{"id":"solution-14","category":"Backup + DR","subcategory":"","description":"# Microsoft 365 Backup + Archiving (unlimited Acronis Hosted Cloud Storage included*)","note":"","prices":{"G1":[3.0,2.85,2.65,2.39,2.2,2.11,2.03],"G2":[4.1,3.9,3.63,3.27,3.01,2.89,2.77]},"skus":{"G1":"SBDDMSENS","G2":"SBDKMSENS"}},{"id":"solution-15","category":"Backup + DR","subcategory":"","description":"# Google Workspace Backup (unlimited Acronis Hosted Cloud Storage included*)","note":"","prices":{"G1":[2.4,2.28,2.12,1.91,1.76,1.69,1.62],"G2":[3.22,3.06,2.85,2.57,2.36,2.27,2.18]},"skus":{"G1":"SBDEMSENS","G2":"SBDLMSENS"}},{"id":"solution-16","category":"Backup + DR","subcategory":"","description":"# Mobile Backup (50 GB od Acronis Hosted Storage included)","note":"","prices":{"G1":[2.0,1.84,1.69,1.4,1.19,1.14,1.09],"G2":[2.3,2.12,1.95,1.62,1.38,1.32,1.27]},"skus":{"G1":"SBDGMSENS","G2":"SBDNMSENS"}},{"id":"solution-17","category":"Ultimate Protection","subcategory":"","description":"# Ultimate Server (3 TB of Acronis Hosted Storage included)","note":"Disponible de forma independiente","prices":{"G1":[71.0,66.03,60.75,54.68,51.95,50.39,48.88],"G2":[87.5,81.38,74.87,67.38,64.01,62.09,60.23]},"skus":{"G1":"SUPCMSENS","G2":"SUPHMSENS"}},{"id":"solution-18","category":"Ultimate Protection","subcategory":"","description":"# Ultimate Virtual Machine (2 TB of Acronis Hosted Storage included)","note":"","prices":{"G1":[50.0,46.5,43.25,40.66,39.03,37.86,37.1],"G2":[61.5,57.2,53.2,50.01,48.01,46.57,45.64]},"skus":{"G1":"SUPDMSENS","G2":"SUPIMSENS"}},{"id":"solution-19","category":"Ultimate Protection","subcategory":"","description":"# Ultimate Workstation (300 GB of Acronis Hosted Storage included)","note":"","prices":{"G1":[13.5,12.56,11.56,10.17,9.25,8.7,8.18],"G2":[16.2,15.07,13.86,12.2,11.1,10.43,9.8]},"skus":{"G1":"SUPEMSENS","G2":"SUPJMSENS"}},{"id":"solution-20","category":"Ultimate Protection","subcategory":"","description":"# Ultimate Microsoft 365 (unlimited Acronis Hosted Cloud Storage included*)","note":"","prices":{"G1":[8.2,7.79,7.32,6.73,6.19,6.0,5.82],"G2":[9.5,9.03,8.49,7.81,7.19,6.97,6.76]},"skus":{"G1":"SUPFMSENS","G2":"SUPKMSENS"}},{"id":"solution-21","category":"Ultimate Protection","subcategory":"","description":"# Ultimate Google Workspace (unlimited Acronis Hosted Cloud Storage included*)","note":"","prices":{"G1":[4.5,4.28,4.02,3.7,3.4,3.3,3.2],"G2":[5.35,5.08,4.78,4.4,4.05,3.93,3.81]},"skus":{"G1":"SUPGMSENS","G2":"SUPLMSENS"}},{"id":"solution-23","category":"Managed Detection and Response","subcategory":"","description":"# Standard In-house MDR Workloads for Solution-Base Licensing, Partner-level (Servers, VMs, Workstations, Hosting Servers)","note":"Requiere Security + RMM o Ultimate Protection","prices":{"All":[1.9,1.8,1.7,1.65,1.6,1.55,1.5]},"skus":{"All":"SRS8MSENS"}},{"id":"solution-24","category":"Managed Detection and Response","subcategory":"","description":"# Advanced In-house MDR Workloads for Solution-Base Licensing, Partner-level (Servers, VMs, Workstations, Hosting Servers)","note":"","prices":{"All":[3.2,3.0,2.9,2.8,2.7,2.6,2.5]},"skus":{"All":"SRS9MSENS"}},{"id":"solution-25","category":"Managed Detection and Response","subcategory":"","description":"# Standard In-house MDR Workloads for Solution-Base Licensing, Customer-level (Servers, VMs, Workstations, Hosting Servers)","note":"","prices":{"All":[2.4,2.3,2.2,2.15,2.1,2.05,2.0]},"skus":{"All":"SRSVMSENS"}},{"id":"solution-26","category":"Managed Detection and Response","subcategory":"","description":"# Advanced In-house MDR Workloads for Solution-Base Licensing, Customer-level (Servers, VMs, Workstations, Hosting Servers)","note":"","prices":{"All":[3.7,3.5,3.4,3.3,3.2,3.1,3.0]},"skus":{"All":"SRSWMSENS"}},{"id":"solution-27","category":"Managed Detection and Response","subcategory":"","description":"# Standard 3rd Party MDR Workloads for Solution-Base Licensing (Servers, VMs, Workstations, Hosting Servers)","note":"","prices":{"All":[3.2,3.1,3.0,2.9,2.8,2.78,2.75]},"skus":{"All":"SRS6MSENS"}},{"id":"solution-28","category":"Managed Detection and Response","subcategory":"","description":"# Advanced 3rd Party MDR Workloads for Solution-Base Licensing (Servers, VMs, Workstations, Hosting Servers)","note":"","prices":{"All":[6.4,6.2,6.0,5.8,5.6,5.55,5.5]},"skus":{"All":"SRS7MSENS"}},{"id":"solution-29","category":"Security Awareness Training","subcategory":"","description":"# Security Awareness Training for Solution-based Licensing (Users)","note":"Disponible de forma independiente","prices":{"All":[1.4,1.33,1.24,1.12,1.03,0.99,0.95]},"skus":{"All":"SBSTFNLOS"}},{"id":"solution-30","category":"Additional Storage","subcategory":"","description":"Acronis Cloud Storage at Acronis Datacenter (for Solution-based Licensing overages)","note":"Requiere BDR o Ultimate Protection","prices":{"G1":[0.0435,0.0387,0.0341,0.0286,0.0232,0.0218,0.0209],"G2":[0.0546,0.0486,0.0428,0.036,0.0292,0.0274,0.0263]},"skus":{"G1":"SPSAMSENS","G2":"SPS2MSENS"}},{"id":"solution-31","category":"Geo-replication","subcategory":"","description":"Solution-based licensing - Backup Geo-redundant - Acronis Hosted Storage","note":"Requiere BDR o Ultimate Protection","prices":{"G1":[0.0325,0.0289,0.0254,0.0216,0.0177,0.0166,0.0159]},"skus":{"G1":"SPSGMSENS"}},{"id":"solution-32","category":"Geo-replication","subcategory":"","description":"Solution-based licensing - # Geo-redundant Microsoft 365 seat (unlimited Acronis Hosted Cloud Storage included*)","note":"","prices":{"G1":[1.73,1.64,1.53,1.38,1.27,1.22,1.17]},"skus":{"G1":"SRSGMSENS"}},{"id":"solution-33","category":"Geo-replication","subcategory":"","description":"Solution-based licensing - # Geo-redundant Google Workspace seat (unlimited Acronis Hosted Cloud Storage included*)","note":"","prices":{"G1":[1.73,1.64,1.53,1.38,1.27,1.22,1.17]},"skus":{"G1":"SQSGMSENS"}},{"id":"solution-34","category":"Disaster Recovery Infrastructure","subcategory":"","description":"Monthly Compute Point Consumption for BDR/Ultimate","note":"Requiere BDR o Ultimate Protection","prices":{"All":[0.06,0.0558,0.0513,0.0462,0.0425,0.0408,0.0388]},"skus":{"All":"SQSAMSENS"}},{"id":"solution-35","category":"Disaster Recovery Infrastructure","subcategory":"","description":"Public IPs for BDR/Ultimate","note":"","prices":{"All":[3.0,2.79,2.57,2.31,2.13,2.04,1.94]},"skus":{"All":"SQSBMSENS"}},{"id":"solution-37","category":"Cyber Frame","subcategory":"Cyber Frame Local","description":"# Physical Cores, Standard Support Included","note":"Disponible de forma independiente","prices":{"All":[10.5,10.0,9.6,9.0,8.2,7.5,6.9]},"skus":{"All":"SFLAMSENS"}},{"id":"solution-38","category":"Cyber Frame","subcategory":"Cyber Frame Cloud","description":"# Used Standard vCPUs","note":"Disponible de forma independiente","prices":{"All":[9.22,8.78,8.43,7.9,7.2,6.59,6.06]},"skus":{"All":"SFCAMSENS"}},{"id":"solution-39","category":"Cyber Frame","subcategory":"Cyber Frame Cloud","description":"# GB of used Standard RAM","note":"","prices":{"All":[2.88,2.74,2.63,2.47,2.25,2.06,1.89]},"skus":{"All":"SFCRMSENS"}},{"id":"solution-40","category":"Cyber Frame","subcategory":"Cyber Frame Cloud","description":"Cyber Frame Cloud Block Storage","note":"","prices":{"All":[0.1146,0.1091,0.1047,0.0982,0.0895,0.0819,0.0753]},"skus":{"All":"SFCHMSENS"}},{"id":"solution-41","category":"Cyber Frame","subcategory":"Cyber Frame Cloud","description":"# Public IPs for Cyber Frame Cloud","note":"","prices":{"All":[3.0,2.79,2.57,2.31,2.13,2.04,1.94]},"skus":{"All":"SFCIMSENS"}},{"id":"solution-42","category":"Cyber Frame","subcategory":"Cyber Frame Cloud","description":"# Windows Licenses (per licensed vCPU)","note":"","prices":{"All":[11.5,11.0,10.5,10.0,9.5,9.0,8.5]},"skus":{"All":"SFCWMSENS"}},{"id":"solution-43","category":"Cyber Workspace","subcategory":"Cyber Employee","description":"# Cyber Employee Agents","note":"Disponible de forma independiente","prices":{"G1":[12.0,11.69,11.45,11.2,10.96,10.72,10.48]},"skus":{"G1":"SWWAMSENS"}},{"id":"solution-44","category":"Cyber Workspace","subcategory":"Cyber Employee","description":"# Cyber Employee Usage Units","note":"","prices":{"G1":[1.0,0.97,0.95,0.93,0.91,0.89,0.87]},"skus":{"G1":"SWWBMSENS"}},{"id":"solution-45","category":"Cyber Files Cloud","subcategory":"Per User","description":"# of Cyber Files Users","note":"Disponible de forma independiente","prices":{"All":[1.7,1.51,1.36,1.12,0.99,0.93,0.89]},"skus":{"All":"SPIAMSENS"}},{"id":"solution-46","category":"Cyber Files Cloud","subcategory":"Per User","description":"Cyber Files Cloud Acronis Hosted Storage (for per User Model)","note":"","prices":{"G1":[0.0435,0.0387,0.0341,0.0286,0.0232,0.0218,0.0209],"G2":[0.0546,0.0486,0.0428,0.036,0.0292,0.0274,0.0263]},"skus":{"G1":"SUVAMSENS","G2":"SUV2MSENS"}},{"id":"solution-47","category":"Cyber Files Cloud","subcategory":"Per GB","description":"Cyber Files Cloud Acronis Hosted Storage (for per GB Model)","note":"Disponible de forma independiente","prices":{"G1":[0.124,0.1104,0.0972,0.0885,0.0832,0.0799,0.0767],"G2":[0.134,0.1193,0.105,0.0956,0.0899,0.0863,0.0828]},"skus":{"G1":"SP1AMSENS","G2":"SP12MSENS"}},{"id":"solution-48","category":"Cyber Files Cloud","subcategory":"Per GB","description":"Cyber Files Cloud Service Provider Hosted Storage","note":"","prices":{"All":[0.072,0.0641,0.0564,0.0513,0.0482,0.0463,0.0444]},"skus":{"All":"SP2AMSENS"}},{"id":"solution-49","category":"Acronis Cyber Infrastructure","subcategory":"","description":"Storage Required for S3/iSCSI/NFS/Compute (Per GB)","note":"Disponible de forma independiente","prices":{"All":[0.015,0.0134,0.0118,0.0104,0.0094,0.009,0.0086]},"skus":{"All":"SCVAMSENS"}}],"service":[{"id":"service-6","category":"Endpoint Security","subcategory":"","description":"# Endpoint Detection and Response (EDR) Workloads (Servers, VMs, Workstations, Hosting Servers)","note":"Disponible de forma independiente","prices":{"All":[1.2,1.12,1.0,0.89,0.76,0.73,0.69]},"skus":{"All":"SRIAMSENS"}},{"id":"service-7","category":"Endpoint Security","subcategory":"","description":"# Extended Detection and Response (XDR) Workloads (Servers, VMs, Workstations, Hosting Servers)","note":"","prices":{"All":[1.8,1.67,1.49,1.33,1.13,1.08,1.03]},"skus":{"All":"SRXAMSENS"}},{"id":"service-8","category":"Endpoint Security","subcategory":"","description":"# In-house MDR Workloads - Standard - Partner-level (Servers, VMs, Workstations, Hosting Servers)","note":"Requiere EDR o XDR","prices":{"All":[1.9,1.8,1.7,1.65,1.6,1.55,1.5]},"skus":{"All":"SRI8MSENS"}},{"id":"service-9","category":"Endpoint Security","subcategory":"","description":"# In-house MDR Workloads - Advanced - Partner-level (Servers, VMs, Workstations, Hosting Servers)","note":"","prices":{"All":[3.2,3.0,2.9,2.8,2.7,2.6,2.5]},"skus":{"All":"SRI9MSENS"}},{"id":"service-10","category":"Endpoint Security","subcategory":"","description":"# In-house MDR Workloads - Standard - Customer-level (Servers, VMs, Workstations, Hosting Servers)","note":"","prices":{"All":[2.4,2.3,2.2,2.15,2.1,2.05,2.0]},"skus":{"All":"SRIVMSENS"}},{"id":"service-11","category":"Endpoint Security","subcategory":"","description":"# In-house MDR Workloads - Advanced - Customer-level (Servers, VMs, Workstations, Hosting Servers)","note":"","prices":{"All":[3.7,3.5,3.4,3.3,3.2,3.1,3.0]},"skus":{"All":"SRIWMSENS"}},{"id":"service-12","category":"Endpoint Security","subcategory":"","description":"# 3rd Party MDR Workloads - Standard (Servers, VMs, Workstations, Hosting Servers)","note":"","prices":{"All":[3.2,3.1,3.0,2.9,2.8,2.78,2.75]},"skus":{"All":"SRI6MSENS"}},{"id":"service-13","category":"Endpoint Security","subcategory":"","description":"# 3rd Party MDR Workloads - Advanced (Servers, VMs, Workstations, Hosting Servers)","note":"","prices":{"All":[6.4,6.2,6.0,5.8,5.6,5.55,5.5]},"skus":{"All":"SRI7MSENS"}},{"id":"service-14","category":"Endpoint Security","subcategory":"","description":"# Gen AI Protection Workloads","note":"Disponible de forma independiente","prices":{"All":[1.0,0.94,0.89,0.84,0.76,0.73,0.69]},"skus":{"All":"SRIUMSENS"}},{"id":"service-15","category":"Endpoint Security","subcategory":"","description":"# Data Loss Prevention Workloads (Servers, VMs, Workstations, Hosting Servers)","note":"Disponible de forma independiente","prices":{"All":[2.5,2.33,2.14,1.93,1.78,1.71,1.62]},"skus":{"All":"SRI5MSENS"}},{"id":"service-16","category":"SaaS Security","subcategory":"","description":"# Email Security Users","note":"Disponible de forma independiente","prices":{"All":[2.4,2.33,2.26,2.15,2.04,1.96,1.88]},"skus":{"All":"SO4AMSENS"}},{"id":"service-17","category":"SaaS Security","subcategory":"","description":"# Collaboration Security Users","note":"","prices":{"All":[1.3,1.26,1.22,1.16,1.1,1.06,1.02]},"skus":{"All":"SO6AMSENS"}},{"id":"service-18","category":"SaaS Security","subcategory":"","description":"# SaaS Security Posture Management Workloads (Microsoft 365 Seats)","note":"","prices":{"All":[1.2,1.16,1.13,1.07,1.02,0.98,0.94]},"skus":{"All":"SRMAMSENS"}},{"id":"service-19","category":"Security Awareness Training","subcategory":"","description":"# Security Awareness Training (Users)","note":"Disponible de forma independiente","prices":{"All":[1.4,1.33,1.24,1.12,1.03,0.99,0.95]},"skus":{"All":"SBATFNLOS"}},{"id":"service-20","category":"RMM","subcategory":"","description":"# Remote Monitoring and Management (RMM) Workloads (Servers, VMs, Workstations, Hosting Servers)","note":"Disponible de forma independiente","prices":{"All":[1.9,1.77,1.56,1.36,1.13,1.08,1.03]},"skus":{"All":"SRHAMSENS"}},{"id":"service-21","category":"PSA","subcategory":"","description":"# Professional Services Automation (PSA) users (3 minimum)","note":"Disponible de forma independiente","prices":{"All":[50.0,48.0,46.0,44.0,42.0,41.0,40.0]},"skus":{"All":"SQACMSENS"}},{"id":"service-22","category":"Backup","subcategory":"Per Workload","description":"# Physical Servers","note":"Disponible de forma independiente","prices":{"All":[25.0,22.75,19.79,17.61,15.85,15.22,14.61]},"skus":{"All":"SPEAMSENS"}},{"id":"service-23","category":"Backup","subcategory":"Per Workload","description":"# Network Attached Storage","note":"","prices":{"All":[17.0,15.47,13.46,11.98,10.78,10.35,9.94]},"skus":{"All":"SPD5MSENS"}},{"id":"service-24","category":"Backup","subcategory":"Per Workload","description":"# Virtual Machines","note":"","prices":{"All":[8.8,8.01,6.97,6.2,5.58,5.36,5.15]},"skus":{"All":"SPFAMSENS"}},{"id":"service-25","category":"Backup","subcategory":"Per Workload","description":"# Workstations","note":"","prices":{"All":[4.1,3.73,3.25,2.89,2.6,2.5,2.4]},"skus":{"All":"SPGAMSENS"}},{"id":"service-26","category":"Backup","subcategory":"Per Workload","description":"# Hosting Servers","note":"","prices":{"All":[4.5,4.1,3.57,3.18,2.86,2.75,2.64]},"skus":{"All":"SQ7AMSENS"}},{"id":"service-27","category":"Backup","subcategory":"Per Workload","description":"# Microsoft 365 Seats (unlimited Acronis Hosted Cloud Storage included*)","note":"","prices":{"G1":[2.4,2.28,2.12,1.91,1.76,1.69,1.62],"G2":[3.22,3.06,2.85,2.57,2.36,2.27,2.18]},"skus":{"G1":"SRJAMSENS","G2":"SRJ2MSENS"}},{"id":"service-28","category":"Backup","subcategory":"Per Workload","description":"# Microsoft 365 Seats (for SP/Customer/Azure/Google Hosted Storage)","note":"","prices":{"All":[1.45,1.35,1.24,1.05,0.86,0.79,0.751]},"skus":{"All":"SRAAMSENS"}},{"id":"service-29","category":"Backup","subcategory":"Per Workload","description":"# Entra ID Seats (unlimited Acronis Hosted Cloud Storage included*)","note":"","prices":{"All":[0.6,0.57,0.53,0.49,0.45,0.43,0.41]},"skus":{"All":"SRJEMSENS"}},{"id":"service-30","category":"Backup","subcategory":"Per Workload","description":"# Entra ID Seats (for SP/Azure/Google Hosted Storage)","note":"","prices":{"All":[0.36,0.34,0.31,0.27,0.23,0.21,0.2]},"skus":{"All":"SRAEMSENS"}},{"id":"service-31","category":"Backup","subcategory":"Per Workload","description":"# Google Workspace Seats (unlimited Acronis Hosted Cloud Storage included*)","note":"","prices":{"G1":[2.4,2.28,2.12,1.91,1.76,1.69,1.62],"G2":[3.22,3.06,2.85,2.57,2.36,2.27,2.18]},"skus":{"G1":"SQ8AMSENS","G2":"SQ82MSENS"}},{"id":"service-32","category":"Backup","subcategory":"Per Workload","description":"# Google Workspace Seats (for SP/Azure/Google Hosted Storage)","note":"","prices":{"All":[1.45,1.35,1.24,1.05,0.86,0.79,0.751]},"skus":{"All":"SQBPMSENS"}},{"id":"service-33","category":"Backup","subcategory":"Per Workload","description":"# Mobile Devices","note":"","prices":{"All":[1.0,0.92,0.83,0.68,0.56,0.54,0.52]},"skus":{"All":"SRBAMSENS"}},{"id":"service-34","category":"Backup","subcategory":"Per Workload","description":"Acronis Cloud Storage at Acronis Datacenter (for Per Workload model)","note":"","prices":{"G1":[0.0435,0.0387,0.0341,0.0286,0.0232,0.0218,0.0209],"G2":[0.0546,0.0486,0.0428,0.036,0.0292,0.0274,0.0263]},"skus":{"G1":"SPDAMSENS","G2":"SPD2MSENS"}},{"id":"service-35","category":"Backup","subcategory":"Per Workload","description":"Acronis Cloud Storage at Azure/Google datacenters (for Per Workload model)","note":"","prices":{"All":[0.05,0.0475,0.0442,0.0398,0.0366,0.0351,0.0337]},"skus":{"All":"SPXAMSENS"}},{"id":"service-36","category":"Backup","subcategory":"Per GB","description":"Acronis Cloud Storage at Acronis Datacenter (for Per GB model)","note":"Disponible de forma independiente","prices":{"G1":[0.13,0.1157,0.1018,0.0896,0.0833,0.08,0.0768],"G2":[0.14,0.1246,0.1096,0.0964,0.0868,0.0833,0.08]},"skus":{"G1":"SPBAMSENS","G2":"SPB2MSENS"}},{"id":"service-37","category":"Backup","subcategory":"Per GB","description":"Acronis Cloud Storage at Azure/Google datacenters (for Per GB model)","note":"","prices":{"All":[0.135,0.1283,0.1193,0.1074,0.0988,0.0948,0.091]},"skus":{"All":"SP3AMSENS"}},{"id":"service-38","category":"Backup","subcategory":"Per GB","description":"Cloud - Service Provider Hosted Storage","note":"","prices":{"All":[0.077,0.0685,0.0603,0.0531,0.0478,0.0459,0.0441]},"skus":{"All":"SPBBMSENS"}},{"id":"service-39","category":"Backup","subcategory":"Per GB","description":"Customer Storage","note":"","prices":{"All":[0.065,0.0579,0.051,0.0449,0.0404,0.0388,0.0372]},"skus":{"All":"SP4BMSENS"}},{"id":"service-40","category":"Backup","subcategory":"Microsoft 365 Backup from Microsoft","description":"Microsoft 365 Backup Storage powered by Microsoft (per GB, for both per GB and per workload models)","note":"Disponible de forma independiente","prices":{"All":[0.124,0.1178,0.1096,0.0986,0.0907,0.0871,0.0836]},"skus":{"All":"SPZBMSENS"}},{"id":"service-41","category":"Backup","subcategory":"Geo-replication","description":"Per GB/Workload model - Backup Geo-redundant - Acronis Hosted Storage","note":"Requiere Backup","prices":{"G1":[0.0325,0.0289,0.0254,0.0216,0.0177,0.0166,0.0159]},"skus":{"G1":"SP5AMSENS"}},{"id":"service-42","category":"Backup","subcategory":"Geo-replication","description":"Per Workload model - # Geo-redundant Microsoft 365 seat (unlimited Acronis Hosted Cloud Storage included*)","note":"","prices":{"G1":[1.73,1.64,1.53,1.38,1.27,1.22,1.17]},"skus":{"G1":"SRJGMSENS"}},{"id":"service-43","category":"Backup","subcategory":"Geo-replication","description":"Per Workload model - # Geo-redundant Google Workspace seat (unlimited Acronis Hosted Cloud Storage included*)","note":"","prices":{"G1":[1.73,1.64,1.53,1.38,1.27,1.22,1.17]},"skus":{"G1":"SQBGMSENS"}},{"id":"service-44","category":"Backup","subcategory":"Direct Backup to Public Cloud","description":"# Direct Backup to Public Cloud, Physical Servers","note":"Requiere Backup","prices":{"All":[12.0,10.68,9.18,7.89,7.1,6.82,6.55]},"skus":{"All":"SRDUMSENS"}},{"id":"service-45","category":"Backup","subcategory":"Direct Backup to Public Cloud","description":"# Direct Backup to Public Cloud, Virtual Machines","note":"","prices":{"All":[4.8,4.27,3.67,3.16,2.84,2.73,2.62]},"skus":{"All":"SREUMSENS"}},{"id":"service-46","category":"Backup","subcategory":"Direct Backup to Public Cloud","description":"# Direct Backup to Public Cloud, Workstations","note":"","prices":{"All":[1.2,1.07,0.92,0.75,0.62,0.56,0.54]},"skus":{"All":"SRFUMSENS"}},{"id":"service-47","category":"Backup","subcategory":"Direct Backup to Public Cloud","description":"# Direct Backup to Public Cloud, Hosting Servers","note":"","prices":{"All":[1.2,1.07,0.92,0.75,0.62,0.56,0.54]},"skus":{"All":"SRGUMSENS"}},{"id":"service-48","category":"Disaster Recovery","subcategory":"","description":"Disaster Recovery Cloud Storage - Acronis Hosted","note":"Requiere Backup","prices":{"G1":[0.07,0.0623,0.0548,0.0482,0.0424,0.0399,0.0383],"G2":[0.087,0.0774,0.0681,0.0599,0.0527,0.0495,0.0475]},"skus":{"G1":"SVEAMSENS","G2":"SVE2MSENS"}},{"id":"service-49","category":"Disaster Recovery","subcategory":"","description":"Disaster Recovery Cloud Storage - Service Provider Hosted","note":"","prices":{"All":[0.04,0.0356,0.0313,0.0275,0.0242,0.0227,0.0218]},"skus":{"All":"SVFAMSENS"}},{"id":"service-50","category":"Disaster Recovery","subcategory":"","description":"Monthly Compute Point Consumption (tests)","note":"","prices":{"All":[0.06,0.0558,0.0513,0.0462,0.0425,0.0408,0.0388]},"skus":{"All":"SQYAMSENS"}},{"id":"service-51","category":"Disaster Recovery","subcategory":"","description":"Public IPs","note":"","prices":{"All":[3.0,2.79,2.57,2.31,2.13,2.04,1.94]},"skus":{"All":"SEDAMSENS"}},{"id":"service-52","category":"Disaster Recovery","subcategory":"","description":"# DR and Direct Backup to Azure workloads","note":"","prices":{"All":[14.0,13.02,11.98,10.9,10.14,9.73,9.24]},"skus":{"All":"SEHAMSENS"}},{"id":"service-53","category":"Email Archiving","subcategory":"Per Workload","description":"# Microsoft 365 Archiving Seats (with unlimited Acronis Hosted Cloud storage*)","note":"Disponible de forma independiente","prices":{"G1":[1.25,1.19,1.12,1.03,0.96,0.92,0.88],"G2":[1.7,1.62,1.52,1.4,1.3,1.248,1.2]},"skus":{"G1":"SHJAMSENS","G2":"SHJ2MSENS"}},{"id":"service-54","category":"Email Archiving","subcategory":"Per Workload","description":"# Microsoft 365 Archiving Seats (for SP/Azure/Google Hosted storage)","note":"","prices":{"All":[0.83,0.79,0.74,0.68,0.63,0.605,0.58]},"skus":{"All":"SHAAMSENS"}},{"id":"service-55","category":"Email Archiving","subcategory":"Per Workload","description":"Acronis Cloud Storage for Email Archiving at Azure/Google datacenters (for Per Workload model)","note":"","prices":{"All":[0.05,0.0475,0.0442,0.0398,0.0366,0.0351,0.0337]},"skus":{"All":"SHXAMSENS"}},{"id":"service-56","category":"Email Archiving","subcategory":"Per GB","description":"Acronis Cloud Storage for Email Archiving at Acronis Datacenter (for Per GB model)","note":"Disponible de forma independiente","prices":{"G1":[0.12,0.1068,0.094,0.0855,0.0795,0.0771,0.074],"G2":[0.13,0.1157,0.1018,0.0926,0.0861,0.0835,0.0802]},"skus":{"G1":"SHBAMSENS","G2":"SHB2MSENS"}},{"id":"service-57","category":"Email Archiving","subcategory":"Per GB","description":"Email Archiving Cloud Storage - Service Provider Hosted","note":"","prices":{"All":[0.072,0.0641,0.0564,0.0513,0.0477,0.0463,0.0444]},"skus":{"All":"SHBBMSENS"}},{"id":"service-58","category":"Email Archiving","subcategory":"Per GB","description":"Acronis Cloud Storage for Email Archiving at Azure/Google datacenters (for Per GB model)","note":"","prices":{"All":[0.121,0.115,0.107,0.0963,0.0886,0.0851,0.0817]},"skus":{"All":"SH3AMSENS"}},{"id":"service-60","category":"Cyber Frame","subcategory":"Cyber Frame Local","description":"# Physical Cores, Standard Support Included","note":"Disponible de forma independiente","prices":{"All":[10.5,10.0,9.6,9.0,8.2,7.5,6.9]},"skus":{"All":"SFLAMSENS"}},{"id":"service-61","category":"Cyber Frame","subcategory":"Cyber Frame Cloud","description":"# Used Standard vCPUs","note":"Disponible de forma independiente","prices":{"All":[9.22,8.78,8.43,7.9,7.2,6.59,6.06]},"skus":{"All":"SFCAMSENS"}},{"id":"service-62","category":"Cyber Frame","subcategory":"Cyber Frame Cloud","description":"# GB of used Standard RAM","note":"","prices":{"All":[2.88,2.74,2.63,2.47,2.25,2.06,1.89]},"skus":{"All":"SFCRMSENS"}},{"id":"service-63","category":"Cyber Frame","subcategory":"Cyber Frame Cloud","description":"Cyber Frame Cloud Block Storage","note":"","prices":{"All":[0.1146,0.1091,0.1047,0.0982,0.0895,0.0819,0.0753]},"skus":{"All":"SFCHMSENS"}},{"id":"service-64","category":"Cyber Frame","subcategory":"Cyber Frame Cloud","description":"# Public IPs for Cyber Frame Cloud","note":"","prices":{"All":[3.0,2.79,2.57,2.31,2.13,2.04,1.94]},"skus":{"All":"SFCIMSENS"}},{"id":"service-65","category":"Cyber Frame","subcategory":"Cyber Frame Cloud","description":"# Windows Licenses (per licensed vCPU)","note":"","prices":{"All":[11.5,11.0,10.5,10.0,9.5,9.0,8.5]},"skus":{"All":"SFCWMSENS"}},{"id":"service-66","category":"Cyber Workspace","subcategory":"Cyber Employee","description":"# Cyber Employee Agents","note":"Disponible de forma independiente","prices":{"G1":[12.0,11.69,11.45,11.2,10.96,10.72,10.48]},"skus":{"G1":"SWWAMSENS"}},{"id":"service-67","category":"Cyber Workspace","subcategory":"Cyber Employee","description":"# Cyber Employee Usage Units","note":"","prices":{"G1":[1.0,0.97,0.95,0.93,0.91,0.89,0.87]},"skus":{"G1":"SWWBMSENS"}},{"id":"service-68","category":"Acronis Cyber Files Cloud","subcategory":"Per User","description":"# of Cyber Files Users","note":"Disponible de forma independiente","prices":{"All":[1.7,1.51,1.36,1.12,0.99,0.93,0.89]},"skus":{"All":"SPIAMSENS"}},{"id":"service-69","category":"Acronis Cyber Files Cloud","subcategory":"Per User","description":"Cyber Files Cloud Acronis Hosted Storage (for per User Model)","note":"","prices":{"G1":[0.0435,0.0387,0.0341,0.0286,0.0232,0.0218,0.0209],"G2":[0.0546,0.0486,0.0428,0.036,0.0292,0.0274,0.0263]},"skus":{"G1":"SUVAMSENS","G2":"SUV2MSENS"}},{"id":"service-70","category":"Acronis Cyber Files Cloud","subcategory":"Per GB","description":"Cyber Files Cloud Acronis Hosted Storage (for per GB Model)","note":"Disponible de forma independiente","prices":{"G1":[0.124,0.1104,0.0972,0.0885,0.0832,0.0799,0.0767],"G2":[0.134,0.1193,0.105,0.0956,0.0899,0.0863,0.0828]},"skus":{"G1":"SP1AMSENS","G2":"SP12MSENS"}},{"id":"service-71","category":"Acronis Cyber Files Cloud","subcategory":"Per GB","description":"Cyber Files Cloud Service Provider Hosted Storage","note":"","prices":{"All":[0.072,0.0641,0.0564,0.0513,0.0482,0.0463,0.0444]},"skus":{"All":"SP2AMSENS"}},{"id":"service-72","category":"Acronis Cyber Infrastructure","subcategory":"","description":"Storage Required for S3/iSCSI/NFS/Compute (Per GB)","note":"Disponible de forma independiente","prices":{"All":[0.015,0.0134,0.0118,0.0104,0.0094,0.009,0.0086]},"skus":{"All":"SCVAMSENS"}}]}
+{
+  "source": "Acronis Cyber Cloud Calculator",
+  "currency": "USD",
+  "priceList": "Actualizado",
+  "commitments": [
+    250,
+    500,
+    1000,
+    2000,
+    4000,
+    7000,
+    10000
+  ],
+  "datacenters": {
+    "G1": [
+      {
+        "label": "Phoenix, USA",
+        "city": "Phoenix",
+        "country": "USA"
+      },
+      {
+        "label": "Ashburn, USA",
+        "city": "Ashburn",
+        "country": "USA"
+      },
+      {
+        "label": "Frankfurt, Germany",
+        "city": "Frankfurt",
+        "country": "Germany"
+      },
+      {
+        "label": "Lupfig, Switzerland",
+        "city": "Lupfig",
+        "country": "Switzerland"
+      },
+      {
+        "label": "London, UK",
+        "city": "London",
+        "country": "UK"
+      },
+      {
+        "label": "Nagano, Japan",
+        "city": "Nagano",
+        "country": "Japan"
+      },
+      {
+        "label": "Kanagawa, Japan",
+        "city": "Kanagawa",
+        "country": "Japan"
+      },
+      {
+        "label": "Cologne, Germany",
+        "city": "Cologne",
+        "country": "Germany"
+      },
+      {
+        "label": "Strasbourg, France",
+        "city": "Strasbourg",
+        "country": "France"
+      },
+      {
+        "label": "St.Louis, USA",
+        "city": "St.Louis",
+        "country": "USA"
+      },
+      {
+        "label": "Singapore, Singapore",
+        "city": "Singapore",
+        "country": "Singapore"
+      },
+      {
+        "label": "Sydney, Australia",
+        "city": "Sydney",
+        "country": "Australia"
+      },
+      {
+        "label": "Vancouver, Canada",
+        "city": "Vancouver",
+        "country": "Canada"
+      },
+      {
+        "label": "Toronto, Canada",
+        "city": "Toronto",
+        "country": "Canada"
+      },
+      {
+        "label": "Auckland, New Zealand",
+        "city": "Auckland",
+        "country": "New Zealand"
+      },
+      {
+        "label": "Balzers, Liechtenstein",
+        "city": "Balzers",
+        "country": "Liechtenstein"
+      },
+      {
+        "label": "Jakarta, Indonesia",
+        "city": "Jakarta",
+        "country": "Indonesia"
+      },
+      {
+        "label": "Mumbai, India",
+        "city": "Mumbai",
+        "country": "India"
+      },
+      {
+        "label": "Valencia, Spain",
+        "city": "Valencia",
+        "country": "Spain"
+      },
+      {
+        "label": "Tel Aviv, Israel",
+        "city": "Tel Aviv",
+        "country": "Israel"
+      },
+      {
+        "label": "Lisbon, Portugal",
+        "city": "Lisbon",
+        "country": "Portugal"
+      },
+      {
+        "label": "Seoul, Korea",
+        "city": "Seoul",
+        "country": "Korea"
+      },
+      {
+        "label": "Prague, Czech Republic",
+        "city": "Prague",
+        "country": "Czech Republic"
+      },
+      {
+        "label": "Thessaloniki, Greece",
+        "city": "Thessaloniki",
+        "country": "Greece"
+      },
+      {
+        "label": "Sao Paulo, Brazil",
+        "city": "Sao Paulo",
+        "country": "Brazil"
+      },
+      {
+        "label": "Warsaw, Poland",
+        "city": "Warsaw",
+        "country": "Poland"
+      },
+      {
+        "label": "Vienna, Austria",
+        "city": "Vienna",
+        "country": "Austria"
+      },
+      {
+        "label": "Billund, Denmark",
+        "city": "Billund",
+        "country": "Denmark"
+      },
+      {
+        "label": "Sofia, Bulgaria",
+        "city": "Sofia",
+        "country": "Bulgaria"
+      },
+      {
+        "label": "Istanbul, Turkey",
+        "city": "Istanbul",
+        "country": "Turkey"
+      },
+      {
+        "label": "Oslo, Norway",
+        "city": "Oslo",
+        "country": "Norway"
+      },
+      {
+        "label": "Helsinki, Finland",
+        "city": "Helsinki",
+        "country": "Finland"
+      },
+      {
+        "label": "Rome, Italy",
+        "city": "Rome",
+        "country": "Italy"
+      },
+      {
+        "label": "Goteborg, Sweden",
+        "city": "Goteborg",
+        "country": "Sweden"
+      },
+      {
+        "label": "Mexico City, Mexico",
+        "city": "Mexico City",
+        "country": "Mexico"
+      },
+      {
+        "label": "Kuala Lumpur, Malaysia",
+        "city": "Kuala Lumpur",
+        "country": "Malaysia"
+      }
+    ],
+    "G2": [
+      {
+        "label": "Johannesburg, South Africa",
+        "city": "Johannesburg",
+        "country": "South Africa"
+      },
+      {
+        "label": "Abu Dhabi, UAE",
+        "city": "Abu Dhabi",
+        "country": "UAE"
+      },
+      {
+        "label": "Taipei, Taiwan",
+        "city": "Taipei",
+        "country": "Taiwan"
+      }
+    ]
+  },
+  "solution": [
+    {
+      "id": "solution-8",
+      "category": "Security + RMM",
+      "subcategory": "",
+      "description": "# Endpoint Security (Servers, VMs, Workstations)",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          2.8,
+          2.6,
+          2.29,
+          1.99,
+          1.65,
+          1.58,
+          1.5
+        ]
+      },
+      "skus": {
+        "All": "SESDMSENS"
+      }
+    },
+    {
+      "id": "solution-9",
+      "category": "Security + RMM",
+      "subcategory": "",
+      "description": "# Microsoft 365 Security",
+      "note": "",
+      "prices": {
+        "All": [
+          3.2,
+          3.1,
+          3.01,
+          2.86,
+          2.72,
+          2.61,
+          2.51
+        ]
+      },
+      "skus": {
+        "All": "SESEMSENS"
+      }
+    },
+    {
+      "id": "solution-10",
+      "category": "Security + RMM",
+      "subcategory": "",
+      "description": "# Google Workspace Security",
+      "note": "",
+      "prices": {
+        "All": [
+          2.4,
+          2.33,
+          2.26,
+          2.15,
+          2.04,
+          1.96,
+          1.88
+        ]
+      },
+      "skus": {
+        "All": "SESFMSENS"
+      }
+    },
+    {
+      "id": "solution-11",
+      "category": "Backup + DR",
+      "subcategory": "",
+      "description": "# BDR Server (3 TB of Acronis Hosted Storage included)",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "G1": [
+          65,
+          60.45,
+          55.61,
+          50.05,
+          46.05,
+          44.21,
+          42
+        ],
+        "G2": [
+          81.5,
+          75.8,
+          69.74,
+          62.77,
+          57.75,
+          55.44,
+          52.67
+        ]
+      },
+      "skus": {
+        "G1": "SBDAMSENS",
+        "G2": "SBDHMSENS"
+      }
+    },
+    {
+      "id": "solution-12",
+      "category": "Backup + DR",
+      "subcategory": "",
+      "description": "# BDR Virtual Machine (2 TB of Acronis Hosted Storage included)",
+      "note": "",
+      "prices": {
+        "G1": [
+          45,
+          41.85,
+          38.5,
+          34.65,
+          31.88,
+          30.6,
+          29.07
+        ],
+        "G2": [
+          56.5,
+          52.55,
+          48.35,
+          43.52,
+          40.04,
+          38.44,
+          36.52
+        ]
+      },
+      "skus": {
+        "G1": "SBDBMSENS",
+        "G2": "SBDIMSENS"
+      }
+    },
+    {
+      "id": "solution-13",
+      "category": "Backup + DR",
+      "subcategory": "",
+      "description": "# BDR Workstation (300 GB of Acronis Hosted Storage included)",
+      "note": "",
+      "prices": {
+        "G1": [
+          9,
+          8.37,
+          7.7,
+          6.55,
+          5.9,
+          5.55,
+          5.11
+        ],
+        "G2": [
+          11.3,
+          10.51,
+          9.67,
+          8.51,
+          7.74,
+          7.28,
+          6.84
+        ]
+      },
+      "skus": {
+        "G1": "SBDCMSENS",
+        "G2": "SBDJMSENS"
+      }
+    },
+    {
+      "id": "solution-14",
+      "category": "Backup + DR",
+      "subcategory": "",
+      "description": "# Microsoft 365 Backup + Archiving (unlimited Acronis Hosted Cloud Storage included*)",
+      "note": "",
+      "prices": {
+        "G1": [
+          3,
+          2.85,
+          2.65,
+          2.39,
+          2.2,
+          2.11,
+          2.03
+        ],
+        "G2": [
+          4.1,
+          3.9,
+          3.63,
+          3.27,
+          3.01,
+          2.89,
+          2.77
+        ]
+      },
+      "skus": {
+        "G1": "SBDDMSENS",
+        "G2": "SBDKMSENS"
+      }
+    },
+    {
+      "id": "solution-15",
+      "category": "Backup + DR",
+      "subcategory": "",
+      "description": "# Google Workspace Backup (unlimited Acronis Hosted Cloud Storage included*)",
+      "note": "",
+      "prices": {
+        "G1": [
+          2.4,
+          2.28,
+          2.12,
+          1.91,
+          1.76,
+          1.69,
+          1.62
+        ],
+        "G2": [
+          3.22,
+          3.06,
+          2.85,
+          2.57,
+          2.36,
+          2.27,
+          2.18
+        ]
+      },
+      "skus": {
+        "G1": "SBDEMSENS",
+        "G2": "SBDLMSENS"
+      }
+    },
+    {
+      "id": "solution-16",
+      "category": "Backup + DR",
+      "subcategory": "",
+      "description": "# Mobile Backup (50 GB od Acronis Hosted Storage included)",
+      "note": "",
+      "prices": {
+        "G1": [
+          2,
+          1.84,
+          1.69,
+          1.4,
+          1.19,
+          1.14,
+          1.09
+        ],
+        "G2": [
+          2.3,
+          2.12,
+          1.95,
+          1.62,
+          1.38,
+          1.32,
+          1.27
+        ]
+      },
+      "skus": {
+        "G1": "SBDGMSENS",
+        "G2": "SBDNMSENS"
+      }
+    },
+    {
+      "id": "solution-17",
+      "category": "Ultimate Protection",
+      "subcategory": "",
+      "description": "# Ultimate Server (3 TB of Acronis Hosted Storage included)",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "G1": [
+          71,
+          66.03,
+          60.75,
+          54.68,
+          51.95,
+          50.39,
+          48.88
+        ],
+        "G2": [
+          87.5,
+          81.38,
+          74.87,
+          67.38,
+          64.01,
+          62.09,
+          60.23
+        ]
+      },
+      "skus": {
+        "G1": "SUPCMSENS",
+        "G2": "SUPHMSENS"
+      }
+    },
+    {
+      "id": "solution-18",
+      "category": "Ultimate Protection",
+      "subcategory": "",
+      "description": "# Ultimate Virtual Machine (2 TB of Acronis Hosted Storage included)",
+      "note": "",
+      "prices": {
+        "G1": [
+          50,
+          46.5,
+          43.25,
+          40.66,
+          39.03,
+          37.86,
+          37.1
+        ],
+        "G2": [
+          61.5,
+          57.2,
+          53.2,
+          50.01,
+          48.01,
+          46.57,
+          45.64
+        ]
+      },
+      "skus": {
+        "G1": "SUPDMSENS",
+        "G2": "SUPIMSENS"
+      }
+    },
+    {
+      "id": "solution-19",
+      "category": "Ultimate Protection",
+      "subcategory": "",
+      "description": "# Ultimate Workstation (300 GB of Acronis Hosted Storage included)",
+      "note": "",
+      "prices": {
+        "G1": [
+          13.5,
+          12.56,
+          11.56,
+          10.17,
+          9.25,
+          8.7,
+          8.18
+        ],
+        "G2": [
+          16.2,
+          15.07,
+          13.86,
+          12.2,
+          11.1,
+          10.43,
+          9.8
+        ]
+      },
+      "skus": {
+        "G1": "SUPEMSENS",
+        "G2": "SUPJMSENS"
+      }
+    },
+    {
+      "id": "solution-20",
+      "category": "Ultimate Protection",
+      "subcategory": "",
+      "description": "# Ultimate Microsoft 365 (unlimited Acronis Hosted Cloud Storage included*)",
+      "note": "",
+      "prices": {
+        "G1": [
+          8.2,
+          7.79,
+          7.32,
+          6.73,
+          6.19,
+          6,
+          5.82
+        ],
+        "G2": [
+          9.5,
+          9.03,
+          8.49,
+          7.81,
+          7.19,
+          6.97,
+          6.76
+        ]
+      },
+      "skus": {
+        "G1": "SUPFMSENS",
+        "G2": "SUPKMSENS"
+      }
+    },
+    {
+      "id": "solution-21",
+      "category": "Ultimate Protection",
+      "subcategory": "",
+      "description": "# Ultimate Google Workspace (unlimited Acronis Hosted Cloud Storage included*)",
+      "note": "",
+      "prices": {
+        "G1": [
+          4.5,
+          4.28,
+          4.02,
+          3.7,
+          3.4,
+          3.3,
+          3.2
+        ],
+        "G2": [
+          5.35,
+          5.08,
+          4.78,
+          4.4,
+          4.05,
+          3.93,
+          3.81
+        ]
+      },
+      "skus": {
+        "G1": "SUPGMSENS",
+        "G2": "SUPLMSENS"
+      }
+    },
+    {
+      "id": "solution-23",
+      "category": "Managed Detection and Response",
+      "subcategory": "",
+      "description": "# Standard In-house MDR Workloads for Solution-Base Licensing, Partner-level (Servers, VMs, Workstations, Hosting Servers)",
+      "note": "Requiere Security + RMM o Ultimate Protection",
+      "prices": {
+        "All": [
+          1.9,
+          1.8,
+          1.7,
+          1.65,
+          1.6,
+          1.55,
+          1.5
+        ]
+      },
+      "skus": {
+        "All": "SRS8MSENS"
+      }
+    },
+    {
+      "id": "solution-24",
+      "category": "Managed Detection and Response",
+      "subcategory": "",
+      "description": "# Advanced In-house MDR Workloads for Solution-Base Licensing, Partner-level (Servers, VMs, Workstations, Hosting Servers)",
+      "note": "",
+      "prices": {
+        "All": [
+          3.2,
+          3,
+          2.9,
+          2.8,
+          2.7,
+          2.6,
+          2.5
+        ]
+      },
+      "skus": {
+        "All": "SRS9MSENS"
+      }
+    },
+    {
+      "id": "solution-25",
+      "category": "Managed Detection and Response",
+      "subcategory": "",
+      "description": "# Standard In-house MDR Workloads for Solution-Base Licensing, Customer-level (Servers, VMs, Workstations, Hosting Servers)",
+      "note": "",
+      "prices": {
+        "All": [
+          2.4,
+          2.3,
+          2.2,
+          2.15,
+          2.1,
+          2.05,
+          2
+        ]
+      },
+      "skus": {
+        "All": "SRSVMSENS"
+      }
+    },
+    {
+      "id": "solution-26",
+      "category": "Managed Detection and Response",
+      "subcategory": "",
+      "description": "# Advanced In-house MDR Workloads for Solution-Base Licensing, Customer-level (Servers, VMs, Workstations, Hosting Servers)",
+      "note": "",
+      "prices": {
+        "All": [
+          3.7,
+          3.5,
+          3.4,
+          3.3,
+          3.2,
+          3.1,
+          3
+        ]
+      },
+      "skus": {
+        "All": "SRSWMSENS"
+      }
+    },
+    {
+      "id": "solution-27",
+      "category": "Managed Detection and Response",
+      "subcategory": "",
+      "description": "# Standard 3rd Party MDR Workloads for Solution-Base Licensing (Servers, VMs, Workstations, Hosting Servers)",
+      "note": "",
+      "prices": {
+        "All": [
+          3.2,
+          3.1,
+          3,
+          2.9,
+          2.8,
+          2.78,
+          2.75
+        ]
+      },
+      "skus": {
+        "All": "SRS6MSENS"
+      }
+    },
+    {
+      "id": "solution-28",
+      "category": "Managed Detection and Response",
+      "subcategory": "",
+      "description": "# Advanced 3rd Party MDR Workloads for Solution-Base Licensing (Servers, VMs, Workstations, Hosting Servers)",
+      "note": "",
+      "prices": {
+        "All": [
+          6.4,
+          6.2,
+          6,
+          5.8,
+          5.6,
+          5.55,
+          5.5
+        ]
+      },
+      "skus": {
+        "All": "SRS7MSENS"
+      }
+    },
+    {
+      "id": "solution-29",
+      "category": "Security Awareness Training",
+      "subcategory": "",
+      "description": "# Security Awareness Training for Solution-based Licensing (Users)",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          1.4,
+          1.33,
+          1.24,
+          1.12,
+          1.03,
+          0.99,
+          0.95
+        ]
+      },
+      "skus": {
+        "All": "SBSTFNLOS"
+      }
+    },
+    {
+      "id": "solution-30",
+      "category": "Additional Storage",
+      "subcategory": "",
+      "description": "Acronis Cloud Storage at Acronis Datacenter (for Solution-based Licensing overages)",
+      "note": "Requiere BDR o Ultimate Protection",
+      "prices": {
+        "G1": [
+          0.0435,
+          0.0387,
+          0.0341,
+          0.0286,
+          0.0232,
+          0.0218,
+          0.0209
+        ],
+        "G2": [
+          0.0546,
+          0.0486,
+          0.0428,
+          0.036,
+          0.0292,
+          0.0274,
+          0.0263
+        ]
+      },
+      "skus": {
+        "G1": "SPSAMSENS",
+        "G2": "SPS2MSENS"
+      }
+    },
+    {
+      "id": "solution-31",
+      "category": "Geo-replication",
+      "subcategory": "",
+      "description": "Solution-based licensing - Backup Geo-redundant - Acronis Hosted Storage",
+      "note": "Requiere BDR o Ultimate Protection",
+      "prices": {
+        "G1": [
+          0.0325,
+          0.0289,
+          0.0254,
+          0.0216,
+          0.0177,
+          0.0166,
+          0.0159
+        ]
+      },
+      "skus": {
+        "G1": "SPSGMSENS"
+      }
+    },
+    {
+      "id": "solution-32",
+      "category": "Geo-replication",
+      "subcategory": "",
+      "description": "Solution-based licensing - # Geo-redundant Microsoft 365 seat (unlimited Acronis Hosted Cloud Storage included*)",
+      "note": "",
+      "prices": {
+        "G1": [
+          1.73,
+          1.64,
+          1.53,
+          1.38,
+          1.27,
+          1.22,
+          1.17
+        ]
+      },
+      "skus": {
+        "G1": "SRSGMSENS"
+      }
+    },
+    {
+      "id": "solution-33",
+      "category": "Geo-replication",
+      "subcategory": "",
+      "description": "Solution-based licensing - # Geo-redundant Google Workspace seat (unlimited Acronis Hosted Cloud Storage included*)",
+      "note": "",
+      "prices": {
+        "G1": [
+          1.73,
+          1.64,
+          1.53,
+          1.38,
+          1.27,
+          1.22,
+          1.17
+        ]
+      },
+      "skus": {
+        "G1": "SQSGMSENS"
+      }
+    },
+    {
+      "id": "solution-34",
+      "category": "Disaster Recovery Infrastructure",
+      "subcategory": "",
+      "description": "Monthly Compute Point Consumption for BDR/Ultimate",
+      "note": "Requiere BDR o Ultimate Protection",
+      "prices": {
+        "All": [
+          0.06,
+          0.0558,
+          0.0513,
+          0.0462,
+          0.0425,
+          0.0408,
+          0.0388
+        ]
+      },
+      "skus": {
+        "All": "SQSAMSENS"
+      }
+    },
+    {
+      "id": "solution-35",
+      "category": "Disaster Recovery Infrastructure",
+      "subcategory": "",
+      "description": "Public IPs for BDR/Ultimate",
+      "note": "",
+      "prices": {
+        "All": [
+          3,
+          2.79,
+          2.57,
+          2.31,
+          2.13,
+          2.04,
+          1.94
+        ]
+      },
+      "skus": {
+        "All": "SQSBMSENS"
+      }
+    },
+    {
+      "id": "solution-37",
+      "category": "Cyber Frame",
+      "subcategory": "Cyber Frame Local",
+      "description": "# Physical Cores, Standard Support Included",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          10.5,
+          10,
+          9.6,
+          9,
+          8.2,
+          7.5,
+          6.9
+        ]
+      },
+      "skus": {
+        "All": "SFLAMSENS"
+      }
+    },
+    {
+      "id": "solution-38",
+      "category": "Cyber Frame",
+      "subcategory": "Cyber Frame Cloud",
+      "description": "# Used Standard vCPUs",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          9.22,
+          8.78,
+          8.43,
+          7.9,
+          7.2,
+          6.59,
+          6.06
+        ]
+      },
+      "skus": {
+        "All": "SFCAMSENS"
+      }
+    },
+    {
+      "id": "solution-39",
+      "category": "Cyber Frame",
+      "subcategory": "Cyber Frame Cloud",
+      "description": "# GB of used Standard RAM",
+      "note": "",
+      "prices": {
+        "All": [
+          2.88,
+          2.74,
+          2.63,
+          2.47,
+          2.25,
+          2.06,
+          1.89
+        ]
+      },
+      "skus": {
+        "All": "SFCRMSENS"
+      }
+    },
+    {
+      "id": "solution-40",
+      "category": "Cyber Frame",
+      "subcategory": "Cyber Frame Cloud",
+      "description": "Cyber Frame Cloud Block Storage",
+      "note": "",
+      "prices": {
+        "All": [
+          0.1146,
+          0.1091,
+          0.1047,
+          0.0982,
+          0.0895,
+          0.0819,
+          0.0753
+        ]
+      },
+      "skus": {
+        "All": "SFCHMSENS"
+      }
+    },
+    {
+      "id": "solution-41",
+      "category": "Cyber Frame",
+      "subcategory": "Cyber Frame Cloud",
+      "description": "# Public IPs for Cyber Frame Cloud",
+      "note": "",
+      "prices": {
+        "All": [
+          3,
+          2.79,
+          2.57,
+          2.31,
+          2.13,
+          2.04,
+          1.94
+        ]
+      },
+      "skus": {
+        "All": "SFCIMSENS"
+      }
+    },
+    {
+      "id": "solution-42",
+      "category": "Cyber Frame",
+      "subcategory": "Cyber Frame Cloud",
+      "description": "# Windows Licenses (per licensed vCPU)",
+      "note": "",
+      "prices": {
+        "All": [
+          11.5,
+          11,
+          10.5,
+          10,
+          9.5,
+          9,
+          8.5
+        ]
+      },
+      "skus": {
+        "All": "SFCWMSENS"
+      }
+    },
+    {
+      "id": "solution-43",
+      "category": "Cyber Workspace",
+      "subcategory": "Cyber Employee",
+      "description": "# Cyber Employee Agents",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "G1": [
+          12,
+          11.69,
+          11.45,
+          11.2,
+          10.96,
+          10.72,
+          10.48
+        ]
+      },
+      "skus": {
+        "G1": "SWWAMSENS"
+      }
+    },
+    {
+      "id": "solution-44",
+      "category": "Cyber Workspace",
+      "subcategory": "Cyber Employee",
+      "description": "# Cyber Employee Usage Units",
+      "note": "",
+      "prices": {
+        "G1": [
+          1,
+          0.97,
+          0.95,
+          0.93,
+          0.91,
+          0.89,
+          0.87
+        ]
+      },
+      "skus": {
+        "G1": "SWWBMSENS"
+      }
+    },
+    {
+      "id": "solution-45",
+      "category": "Cyber Files Cloud",
+      "subcategory": "Per User",
+      "description": "# of Cyber Files Users",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          1.7,
+          1.51,
+          1.36,
+          1.12,
+          0.99,
+          0.93,
+          0.89
+        ]
+      },
+      "skus": {
+        "All": "SPIAMSENS"
+      }
+    },
+    {
+      "id": "solution-46",
+      "category": "Cyber Files Cloud",
+      "subcategory": "Per User",
+      "description": "Cyber Files Cloud Acronis Hosted Storage (for per User Model)",
+      "note": "",
+      "prices": {
+        "G1": [
+          0.0435,
+          0.0387,
+          0.0341,
+          0.0286,
+          0.0232,
+          0.0218,
+          0.0209
+        ],
+        "G2": [
+          0.0546,
+          0.0486,
+          0.0428,
+          0.036,
+          0.0292,
+          0.0274,
+          0.0263
+        ]
+      },
+      "skus": {
+        "G1": "SUVAMSENS",
+        "G2": "SUV2MSENS"
+      }
+    },
+    {
+      "id": "solution-47",
+      "category": "Cyber Files Cloud",
+      "subcategory": "Per GB",
+      "description": "Cyber Files Cloud Acronis Hosted Storage (for per GB Model)",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "G1": [
+          0.124,
+          0.1104,
+          0.0972,
+          0.0885,
+          0.0832,
+          0.0799,
+          0.0767
+        ],
+        "G2": [
+          0.134,
+          0.1193,
+          0.105,
+          0.0956,
+          0.0899,
+          0.0863,
+          0.0828
+        ]
+      },
+      "skus": {
+        "G1": "SP1AMSENS",
+        "G2": "SP12MSENS"
+      }
+    },
+    {
+      "id": "solution-48",
+      "category": "Cyber Files Cloud",
+      "subcategory": "Per GB",
+      "description": "Cyber Files Cloud Service Provider Hosted Storage",
+      "note": "",
+      "prices": {
+        "All": [
+          0.072,
+          0.0641,
+          0.0564,
+          0.0513,
+          0.0482,
+          0.0463,
+          0.0444
+        ]
+      },
+      "skus": {
+        "All": "SP2AMSENS"
+      }
+    },
+    {
+      "id": "solution-49",
+      "category": "Acronis Cyber Infrastructure",
+      "subcategory": "",
+      "description": "Storage Required for S3/iSCSI/NFS/Compute (Per GB)",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          0.015,
+          0.0134,
+          0.0118,
+          0.0104,
+          0.0094,
+          0.009,
+          0.0086
+        ]
+      },
+      "skus": {
+        "All": "SCVAMSENS"
+      }
+    }
+  ],
+  "service": [
+    {
+      "id": "service-6",
+      "category": "Endpoint Security",
+      "subcategory": "",
+      "description": "# Endpoint Detection and Response (EDR) Workloads (Servers, VMs, Workstations, Hosting Servers)",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          1.2,
+          1.12,
+          1,
+          0.89,
+          0.76,
+          0.73,
+          0.69
+        ]
+      },
+      "skus": {
+        "All": "SRIAMSENS"
+      }
+    },
+    {
+      "id": "service-7",
+      "category": "Endpoint Security",
+      "subcategory": "",
+      "description": "# Extended Detection and Response (XDR) Workloads (Servers, VMs, Workstations, Hosting Servers)",
+      "note": "",
+      "prices": {
+        "All": [
+          1.8,
+          1.67,
+          1.49,
+          1.33,
+          1.13,
+          1.08,
+          1.03
+        ]
+      },
+      "skus": {
+        "All": "SRXAMSENS"
+      }
+    },
+    {
+      "id": "service-8",
+      "category": "Endpoint Security",
+      "subcategory": "",
+      "description": "# In-house MDR Workloads - Standard - Partner-level (Servers, VMs, Workstations, Hosting Servers)",
+      "note": "Requiere EDR o XDR",
+      "prices": {
+        "All": [
+          1.9,
+          1.8,
+          1.7,
+          1.65,
+          1.6,
+          1.55,
+          1.5
+        ]
+      },
+      "skus": {
+        "All": "SRI8MSENS"
+      }
+    },
+    {
+      "id": "service-9",
+      "category": "Endpoint Security",
+      "subcategory": "",
+      "description": "# In-house MDR Workloads - Advanced - Partner-level (Servers, VMs, Workstations, Hosting Servers)",
+      "note": "",
+      "prices": {
+        "All": [
+          3.2,
+          3,
+          2.9,
+          2.8,
+          2.7,
+          2.6,
+          2.5
+        ]
+      },
+      "skus": {
+        "All": "SRI9MSENS"
+      }
+    },
+    {
+      "id": "service-10",
+      "category": "Endpoint Security",
+      "subcategory": "",
+      "description": "# In-house MDR Workloads - Standard - Customer-level (Servers, VMs, Workstations, Hosting Servers)",
+      "note": "",
+      "prices": {
+        "All": [
+          2.4,
+          2.3,
+          2.2,
+          2.15,
+          2.1,
+          2.05,
+          2
+        ]
+      },
+      "skus": {
+        "All": "SRIVMSENS"
+      }
+    },
+    {
+      "id": "service-11",
+      "category": "Endpoint Security",
+      "subcategory": "",
+      "description": "# In-house MDR Workloads - Advanced - Customer-level (Servers, VMs, Workstations, Hosting Servers)",
+      "note": "",
+      "prices": {
+        "All": [
+          3.7,
+          3.5,
+          3.4,
+          3.3,
+          3.2,
+          3.1,
+          3
+        ]
+      },
+      "skus": {
+        "All": "SRIWMSENS"
+      }
+    },
+    {
+      "id": "service-12",
+      "category": "Endpoint Security",
+      "subcategory": "",
+      "description": "# 3rd Party MDR Workloads - Standard (Servers, VMs, Workstations, Hosting Servers)",
+      "note": "",
+      "prices": {
+        "All": [
+          3.2,
+          3.1,
+          3,
+          2.9,
+          2.8,
+          2.78,
+          2.75
+        ]
+      },
+      "skus": {
+        "All": "SRI6MSENS"
+      }
+    },
+    {
+      "id": "service-13",
+      "category": "Endpoint Security",
+      "subcategory": "",
+      "description": "# 3rd Party MDR Workloads - Advanced (Servers, VMs, Workstations, Hosting Servers)",
+      "note": "",
+      "prices": {
+        "All": [
+          6.4,
+          6.2,
+          6,
+          5.8,
+          5.6,
+          5.55,
+          5.5
+        ]
+      },
+      "skus": {
+        "All": "SRI7MSENS"
+      }
+    },
+    {
+      "id": "service-14",
+      "category": "Endpoint Security",
+      "subcategory": "",
+      "description": "# Gen AI Protection Workloads",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          1,
+          0.94,
+          0.89,
+          0.84,
+          0.76,
+          0.73,
+          0.69
+        ]
+      },
+      "skus": {
+        "All": "SRIUMSENS"
+      }
+    },
+    {
+      "id": "service-15",
+      "category": "Endpoint Security",
+      "subcategory": "",
+      "description": "# Data Loss Prevention Workloads (Servers, VMs, Workstations, Hosting Servers)",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          2.5,
+          2.33,
+          2.14,
+          1.93,
+          1.78,
+          1.71,
+          1.62
+        ]
+      },
+      "skus": {
+        "All": "SRI5MSENS"
+      }
+    },
+    {
+      "id": "service-16",
+      "category": "SaaS Security",
+      "subcategory": "",
+      "description": "# Email Security Users",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          2.4,
+          2.33,
+          2.26,
+          2.15,
+          2.04,
+          1.96,
+          1.88
+        ]
+      },
+      "skus": {
+        "All": "SO4AMSENS"
+      }
+    },
+    {
+      "id": "service-17",
+      "category": "SaaS Security",
+      "subcategory": "",
+      "description": "# Collaboration Security Users",
+      "note": "",
+      "prices": {
+        "All": [
+          1.3,
+          1.26,
+          1.22,
+          1.16,
+          1.1,
+          1.06,
+          1.02
+        ]
+      },
+      "skus": {
+        "All": "SO6AMSENS"
+      }
+    },
+    {
+      "id": "service-18",
+      "category": "SaaS Security",
+      "subcategory": "",
+      "description": "# SaaS Security Posture Management Workloads (Microsoft 365 Seats)",
+      "note": "",
+      "prices": {
+        "All": [
+          1.2,
+          1.16,
+          1.13,
+          1.07,
+          1.02,
+          0.98,
+          0.94
+        ]
+      },
+      "skus": {
+        "All": "SRMAMSENS"
+      }
+    },
+    {
+      "id": "service-19",
+      "category": "Security Awareness Training",
+      "subcategory": "",
+      "description": "# Security Awareness Training (Users)",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          1.4,
+          1.33,
+          1.24,
+          1.12,
+          1.03,
+          0.99,
+          0.95
+        ]
+      },
+      "skus": {
+        "All": "SBATFNLOS"
+      }
+    },
+    {
+      "id": "service-20",
+      "category": "RMM",
+      "subcategory": "",
+      "description": "# Remote Monitoring and Management (RMM) Workloads (Servers, VMs, Workstations, Hosting Servers)",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          1.9,
+          1.77,
+          1.56,
+          1.36,
+          1.13,
+          1.08,
+          1.03
+        ]
+      },
+      "skus": {
+        "All": "SRHAMSENS"
+      }
+    },
+    {
+      "id": "service-21",
+      "category": "PSA",
+      "subcategory": "",
+      "description": "# Professional Services Automation (PSA) users (3 minimum)",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          50,
+          48,
+          46,
+          44,
+          42,
+          41,
+          40
+        ]
+      },
+      "skus": {
+        "All": "SQACMSENS"
+      }
+    },
+    {
+      "id": "service-22",
+      "category": "Backup",
+      "subcategory": "Per Workload",
+      "description": "# Physical Servers",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          25,
+          22.75,
+          19.79,
+          17.61,
+          15.85,
+          15.22,
+          14.61
+        ]
+      },
+      "skus": {
+        "All": "SPEAMSENS"
+      }
+    },
+    {
+      "id": "service-23",
+      "category": "Backup",
+      "subcategory": "Per Workload",
+      "description": "# Network Attached Storage",
+      "note": "",
+      "prices": {
+        "All": [
+          17,
+          15.47,
+          13.46,
+          11.98,
+          10.78,
+          10.35,
+          9.94
+        ]
+      },
+      "skus": {
+        "All": "SPD5MSENS"
+      }
+    },
+    {
+      "id": "service-24",
+      "category": "Backup",
+      "subcategory": "Per Workload",
+      "description": "# Virtual Machines",
+      "note": "",
+      "prices": {
+        "All": [
+          8.8,
+          8.01,
+          6.97,
+          6.2,
+          5.58,
+          5.36,
+          5.15
+        ]
+      },
+      "skus": {
+        "All": "SPFAMSENS"
+      }
+    },
+    {
+      "id": "service-25",
+      "category": "Backup",
+      "subcategory": "Per Workload",
+      "description": "# Workstations",
+      "note": "",
+      "prices": {
+        "All": [
+          4.1,
+          3.73,
+          3.25,
+          2.89,
+          2.6,
+          2.5,
+          2.4
+        ]
+      },
+      "skus": {
+        "All": "SPGAMSENS"
+      }
+    },
+    {
+      "id": "service-26",
+      "category": "Backup",
+      "subcategory": "Per Workload",
+      "description": "# Hosting Servers",
+      "note": "",
+      "prices": {
+        "All": [
+          4.5,
+          4.1,
+          3.57,
+          3.18,
+          2.86,
+          2.75,
+          2.64
+        ]
+      },
+      "skus": {
+        "All": "SQ7AMSENS"
+      }
+    },
+    {
+      "id": "service-27",
+      "category": "Backup",
+      "subcategory": "Per Workload",
+      "description": "# Microsoft 365 Seats (unlimited Acronis Hosted Cloud Storage included*)",
+      "note": "",
+      "prices": {
+        "G1": [
+          2.4,
+          2.28,
+          2.12,
+          1.91,
+          1.76,
+          1.69,
+          1.62
+        ],
+        "G2": [
+          3.22,
+          3.06,
+          2.85,
+          2.57,
+          2.36,
+          2.27,
+          2.18
+        ]
+      },
+      "skus": {
+        "G1": "SRJAMSENS",
+        "G2": "SRJ2MSENS"
+      }
+    },
+    {
+      "id": "service-28",
+      "category": "Backup",
+      "subcategory": "Per Workload",
+      "description": "# Microsoft 365 Seats (for SP/Customer/Azure/Google Hosted Storage)",
+      "note": "",
+      "prices": {
+        "All": [
+          1.45,
+          1.35,
+          1.24,
+          1.05,
+          0.86,
+          0.79,
+          0.751
+        ]
+      },
+      "skus": {
+        "All": "SRAAMSENS"
+      }
+    },
+    {
+      "id": "service-29",
+      "category": "Backup",
+      "subcategory": "Per Workload",
+      "description": "# Entra ID Seats (unlimited Acronis Hosted Cloud Storage included*)",
+      "note": "",
+      "prices": {
+        "All": [
+          0.6,
+          0.57,
+          0.53,
+          0.49,
+          0.45,
+          0.43,
+          0.41
+        ]
+      },
+      "skus": {
+        "All": "SRJEMSENS"
+      }
+    },
+    {
+      "id": "service-30",
+      "category": "Backup",
+      "subcategory": "Per Workload",
+      "description": "# Entra ID Seats (for SP/Azure/Google Hosted Storage)",
+      "note": "",
+      "prices": {
+        "All": [
+          0.36,
+          0.34,
+          0.31,
+          0.27,
+          0.23,
+          0.21,
+          0.2
+        ]
+      },
+      "skus": {
+        "All": "SRAEMSENS"
+      }
+    },
+    {
+      "id": "service-31",
+      "category": "Backup",
+      "subcategory": "Per Workload",
+      "description": "# Google Workspace Seats (unlimited Acronis Hosted Cloud Storage included*)",
+      "note": "",
+      "prices": {
+        "G1": [
+          2.4,
+          2.28,
+          2.12,
+          1.91,
+          1.76,
+          1.69,
+          1.62
+        ],
+        "G2": [
+          3.22,
+          3.06,
+          2.85,
+          2.57,
+          2.36,
+          2.27,
+          2.18
+        ]
+      },
+      "skus": {
+        "G1": "SQ8AMSENS",
+        "G2": "SQ82MSENS"
+      }
+    },
+    {
+      "id": "service-32",
+      "category": "Backup",
+      "subcategory": "Per Workload",
+      "description": "# Google Workspace Seats (for SP/Azure/Google Hosted Storage)",
+      "note": "",
+      "prices": {
+        "All": [
+          1.45,
+          1.35,
+          1.24,
+          1.05,
+          0.86,
+          0.79,
+          0.751
+        ]
+      },
+      "skus": {
+        "All": "SQBPMSENS"
+      }
+    },
+    {
+      "id": "service-33",
+      "category": "Backup",
+      "subcategory": "Per Workload",
+      "description": "# Mobile Devices",
+      "note": "",
+      "prices": {
+        "All": [
+          1,
+          0.92,
+          0.83,
+          0.68,
+          0.56,
+          0.54,
+          0.52
+        ]
+      },
+      "skus": {
+        "All": "SRBAMSENS"
+      }
+    },
+    {
+      "id": "service-34",
+      "category": "Backup",
+      "subcategory": "Per Workload",
+      "description": "Acronis Cloud Storage at Acronis Datacenter (for Per Workload model)",
+      "note": "",
+      "prices": {
+        "G1": [
+          0.0435,
+          0.0387,
+          0.0341,
+          0.0286,
+          0.0232,
+          0.0218,
+          0.0209
+        ],
+        "G2": [
+          0.0546,
+          0.0486,
+          0.0428,
+          0.036,
+          0.0292,
+          0.0274,
+          0.0263
+        ]
+      },
+      "skus": {
+        "G1": "SPDAMSENS",
+        "G2": "SPD2MSENS"
+      }
+    },
+    {
+      "id": "service-35",
+      "category": "Backup",
+      "subcategory": "Per Workload",
+      "description": "Acronis Cloud Storage at Azure/Google datacenters (for Per Workload model)",
+      "note": "",
+      "prices": {
+        "All": [
+          0.05,
+          0.0475,
+          0.0442,
+          0.0398,
+          0.0366,
+          0.0351,
+          0.0337
+        ]
+      },
+      "skus": {
+        "All": "SPXAMSENS"
+      }
+    },
+    {
+      "id": "service-36",
+      "category": "Backup",
+      "subcategory": "Per GB",
+      "description": "Acronis Cloud Storage at Acronis Datacenter (for Per GB model)",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "G1": [
+          0.13,
+          0.1157,
+          0.1018,
+          0.0896,
+          0.0833,
+          0.08,
+          0.0768
+        ],
+        "G2": [
+          0.14,
+          0.1246,
+          0.1096,
+          0.0964,
+          0.0868,
+          0.0833,
+          0.08
+        ]
+      },
+      "skus": {
+        "G1": "SPBAMSENS",
+        "G2": "SPB2MSENS"
+      }
+    },
+    {
+      "id": "service-37",
+      "category": "Backup",
+      "subcategory": "Per GB",
+      "description": "Acronis Cloud Storage at Azure/Google datacenters (for Per GB model)",
+      "note": "",
+      "prices": {
+        "All": [
+          0.135,
+          0.1283,
+          0.1193,
+          0.1074,
+          0.0988,
+          0.0948,
+          0.091
+        ]
+      },
+      "skus": {
+        "All": "SP3AMSENS"
+      }
+    },
+    {
+      "id": "service-38",
+      "category": "Backup",
+      "subcategory": "Per GB",
+      "description": "Cloud - Service Provider Hosted Storage",
+      "note": "",
+      "prices": {
+        "All": [
+          0.077,
+          0.0685,
+          0.0603,
+          0.0531,
+          0.0478,
+          0.0459,
+          0.0441
+        ]
+      },
+      "skus": {
+        "All": "SPBBMSENS"
+      }
+    },
+    {
+      "id": "service-39",
+      "category": "Backup",
+      "subcategory": "Per GB",
+      "description": "Customer Storage",
+      "note": "",
+      "prices": {
+        "All": [
+          0.065,
+          0.0579,
+          0.051,
+          0.0449,
+          0.0404,
+          0.0388,
+          0.0372
+        ]
+      },
+      "skus": {
+        "All": "SP4BMSENS"
+      }
+    },
+    {
+      "id": "service-40",
+      "category": "Backup",
+      "subcategory": "Microsoft 365 Backup from Microsoft",
+      "description": "Microsoft 365 Backup Storage powered by Microsoft (per GB, for both per GB and per workload models)",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          0.124,
+          0.1178,
+          0.1096,
+          0.0986,
+          0.0907,
+          0.0871,
+          0.0836
+        ]
+      },
+      "skus": {
+        "All": "SPZBMSENS"
+      }
+    },
+    {
+      "id": "service-41",
+      "category": "Backup",
+      "subcategory": "Geo-replication",
+      "description": "Per GB/Workload model - Backup Geo-redundant - Acronis Hosted Storage",
+      "note": "Requiere Backup",
+      "prices": {
+        "G1": [
+          0.0325,
+          0.0289,
+          0.0254,
+          0.0216,
+          0.0177,
+          0.0166,
+          0.0159
+        ]
+      },
+      "skus": {
+        "G1": "SP5AMSENS"
+      }
+    },
+    {
+      "id": "service-42",
+      "category": "Backup",
+      "subcategory": "Geo-replication",
+      "description": "Per Workload model - # Geo-redundant Microsoft 365 seat (unlimited Acronis Hosted Cloud Storage included*)",
+      "note": "",
+      "prices": {
+        "G1": [
+          1.73,
+          1.64,
+          1.53,
+          1.38,
+          1.27,
+          1.22,
+          1.17
+        ]
+      },
+      "skus": {
+        "G1": "SRJGMSENS"
+      }
+    },
+    {
+      "id": "service-43",
+      "category": "Backup",
+      "subcategory": "Geo-replication",
+      "description": "Per Workload model - # Geo-redundant Google Workspace seat (unlimited Acronis Hosted Cloud Storage included*)",
+      "note": "",
+      "prices": {
+        "G1": [
+          1.73,
+          1.64,
+          1.53,
+          1.38,
+          1.27,
+          1.22,
+          1.17
+        ]
+      },
+      "skus": {
+        "G1": "SQBGMSENS"
+      }
+    },
+    {
+      "id": "service-44",
+      "category": "Backup",
+      "subcategory": "Direct Backup to Public Cloud",
+      "description": "# Direct Backup to Public Cloud, Physical Servers",
+      "note": "Requiere Backup",
+      "prices": {
+        "All": [
+          12,
+          10.68,
+          9.18,
+          7.89,
+          7.1,
+          6.82,
+          6.55
+        ]
+      },
+      "skus": {
+        "All": "SRDUMSENS"
+      }
+    },
+    {
+      "id": "service-45",
+      "category": "Backup",
+      "subcategory": "Direct Backup to Public Cloud",
+      "description": "# Direct Backup to Public Cloud, Virtual Machines",
+      "note": "",
+      "prices": {
+        "All": [
+          4.8,
+          4.27,
+          3.67,
+          3.16,
+          2.84,
+          2.73,
+          2.62
+        ]
+      },
+      "skus": {
+        "All": "SREUMSENS"
+      }
+    },
+    {
+      "id": "service-46",
+      "category": "Backup",
+      "subcategory": "Direct Backup to Public Cloud",
+      "description": "# Direct Backup to Public Cloud, Workstations",
+      "note": "",
+      "prices": {
+        "All": [
+          1.2,
+          1.07,
+          0.92,
+          0.75,
+          0.62,
+          0.56,
+          0.54
+        ]
+      },
+      "skus": {
+        "All": "SRFUMSENS"
+      }
+    },
+    {
+      "id": "service-47",
+      "category": "Backup",
+      "subcategory": "Direct Backup to Public Cloud",
+      "description": "# Direct Backup to Public Cloud, Hosting Servers",
+      "note": "",
+      "prices": {
+        "All": [
+          1.2,
+          1.07,
+          0.92,
+          0.75,
+          0.62,
+          0.56,
+          0.54
+        ]
+      },
+      "skus": {
+        "All": "SRGUMSENS"
+      }
+    },
+    {
+      "id": "service-48",
+      "category": "Disaster Recovery",
+      "subcategory": "",
+      "description": "Disaster Recovery Cloud Storage - Acronis Hosted",
+      "note": "Requiere Backup",
+      "prices": {
+        "G1": [
+          0.07,
+          0.0623,
+          0.0548,
+          0.0482,
+          0.0424,
+          0.0399,
+          0.0383
+        ],
+        "G2": [
+          0.087,
+          0.0774,
+          0.0681,
+          0.0599,
+          0.0527,
+          0.0495,
+          0.0475
+        ]
+      },
+      "skus": {
+        "G1": "SVEAMSENS",
+        "G2": "SVE2MSENS"
+      }
+    },
+    {
+      "id": "service-49",
+      "category": "Disaster Recovery",
+      "subcategory": "",
+      "description": "Disaster Recovery Cloud Storage - Service Provider Hosted",
+      "note": "",
+      "prices": {
+        "All": [
+          0.04,
+          0.0356,
+          0.0313,
+          0.0275,
+          0.0242,
+          0.0227,
+          0.0218
+        ]
+      },
+      "skus": {
+        "All": "SVFAMSENS"
+      }
+    },
+    {
+      "id": "service-50",
+      "category": "Disaster Recovery",
+      "subcategory": "",
+      "description": "Monthly Compute Point Consumption (tests)",
+      "note": "",
+      "prices": {
+        "All": [
+          0.06,
+          0.0558,
+          0.0513,
+          0.0462,
+          0.0425,
+          0.0408,
+          0.0388
+        ]
+      },
+      "skus": {
+        "All": "SQYAMSENS"
+      }
+    },
+    {
+      "id": "service-51",
+      "category": "Disaster Recovery",
+      "subcategory": "",
+      "description": "Public IPs",
+      "note": "",
+      "prices": {
+        "All": [
+          3,
+          2.79,
+          2.57,
+          2.31,
+          2.13,
+          2.04,
+          1.94
+        ]
+      },
+      "skus": {
+        "All": "SEDAMSENS"
+      }
+    },
+    {
+      "id": "service-52",
+      "category": "Disaster Recovery",
+      "subcategory": "",
+      "description": "# DR and Direct Backup to Azure workloads",
+      "note": "",
+      "prices": {
+        "All": [
+          14,
+          13.02,
+          11.98,
+          10.9,
+          10.14,
+          9.73,
+          9.24
+        ]
+      },
+      "skus": {
+        "All": "SEHAMSENS"
+      }
+    },
+    {
+      "id": "service-53",
+      "category": "Email Archiving",
+      "subcategory": "Per Workload",
+      "description": "# Microsoft 365 Archiving Seats (with unlimited Acronis Hosted Cloud storage*)",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "G1": [
+          1.25,
+          1.19,
+          1.12,
+          1.03,
+          0.96,
+          0.92,
+          0.88
+        ],
+        "G2": [
+          1.7,
+          1.62,
+          1.52,
+          1.4,
+          1.3,
+          1.248,
+          1.2
+        ]
+      },
+      "skus": {
+        "G1": "SHJAMSENS",
+        "G2": "SHJ2MSENS"
+      }
+    },
+    {
+      "id": "service-54",
+      "category": "Email Archiving",
+      "subcategory": "Per Workload",
+      "description": "# Microsoft 365 Archiving Seats (for SP/Azure/Google Hosted storage)",
+      "note": "",
+      "prices": {
+        "All": [
+          0.83,
+          0.79,
+          0.74,
+          0.68,
+          0.63,
+          0.605,
+          0.58
+        ]
+      },
+      "skus": {
+        "All": "SHAAMSENS"
+      }
+    },
+    {
+      "id": "service-55",
+      "category": "Email Archiving",
+      "subcategory": "Per Workload",
+      "description": "Acronis Cloud Storage for Email Archiving at Azure/Google datacenters (for Per Workload model)",
+      "note": "",
+      "prices": {
+        "All": [
+          0.05,
+          0.0475,
+          0.0442,
+          0.0398,
+          0.0366,
+          0.0351,
+          0.0337
+        ]
+      },
+      "skus": {
+        "All": "SHXAMSENS"
+      }
+    },
+    {
+      "id": "service-56",
+      "category": "Email Archiving",
+      "subcategory": "Per GB",
+      "description": "Acronis Cloud Storage for Email Archiving at Acronis Datacenter (for Per GB model)",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "G1": [
+          0.12,
+          0.1068,
+          0.094,
+          0.0855,
+          0.0795,
+          0.0771,
+          0.074
+        ],
+        "G2": [
+          0.13,
+          0.1157,
+          0.1018,
+          0.0926,
+          0.0861,
+          0.0835,
+          0.0802
+        ]
+      },
+      "skus": {
+        "G1": "SHBAMSENS",
+        "G2": "SHB2MSENS"
+      }
+    },
+    {
+      "id": "service-57",
+      "category": "Email Archiving",
+      "subcategory": "Per GB",
+      "description": "Email Archiving Cloud Storage - Service Provider Hosted",
+      "note": "",
+      "prices": {
+        "All": [
+          0.072,
+          0.0641,
+          0.0564,
+          0.0513,
+          0.0477,
+          0.0463,
+          0.0444
+        ]
+      },
+      "skus": {
+        "All": "SHBBMSENS"
+      }
+    },
+    {
+      "id": "service-58",
+      "category": "Email Archiving",
+      "subcategory": "Per GB",
+      "description": "Acronis Cloud Storage for Email Archiving at Azure/Google datacenters (for Per GB model)",
+      "note": "",
+      "prices": {
+        "All": [
+          0.121,
+          0.115,
+          0.107,
+          0.0963,
+          0.0886,
+          0.0851,
+          0.0817
+        ]
+      },
+      "skus": {
+        "All": "SH3AMSENS"
+      }
+    },
+    {
+      "id": "service-60",
+      "category": "Cyber Frame",
+      "subcategory": "Cyber Frame Local",
+      "description": "# Physical Cores, Standard Support Included",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          10.5,
+          10,
+          9.6,
+          9,
+          8.2,
+          7.5,
+          6.9
+        ]
+      },
+      "skus": {
+        "All": "SFLAMSENS"
+      }
+    },
+    {
+      "id": "service-61",
+      "category": "Cyber Frame",
+      "subcategory": "Cyber Frame Cloud",
+      "description": "# Used Standard vCPUs",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          9.22,
+          8.78,
+          8.43,
+          7.9,
+          7.2,
+          6.59,
+          6.06
+        ]
+      },
+      "skus": {
+        "All": "SFCAMSENS"
+      }
+    },
+    {
+      "id": "service-62",
+      "category": "Cyber Frame",
+      "subcategory": "Cyber Frame Cloud",
+      "description": "# GB of used Standard RAM",
+      "note": "",
+      "prices": {
+        "All": [
+          2.88,
+          2.74,
+          2.63,
+          2.47,
+          2.25,
+          2.06,
+          1.89
+        ]
+      },
+      "skus": {
+        "All": "SFCRMSENS"
+      }
+    },
+    {
+      "id": "service-63",
+      "category": "Cyber Frame",
+      "subcategory": "Cyber Frame Cloud",
+      "description": "Cyber Frame Cloud Block Storage",
+      "note": "",
+      "prices": {
+        "All": [
+          0.1146,
+          0.1091,
+          0.1047,
+          0.0982,
+          0.0895,
+          0.0819,
+          0.0753
+        ]
+      },
+      "skus": {
+        "All": "SFCHMSENS"
+      }
+    },
+    {
+      "id": "service-64",
+      "category": "Cyber Frame",
+      "subcategory": "Cyber Frame Cloud",
+      "description": "# Public IPs for Cyber Frame Cloud",
+      "note": "",
+      "prices": {
+        "All": [
+          3,
+          2.79,
+          2.57,
+          2.31,
+          2.13,
+          2.04,
+          1.94
+        ]
+      },
+      "skus": {
+        "All": "SFCIMSENS"
+      }
+    },
+    {
+      "id": "service-65",
+      "category": "Cyber Frame",
+      "subcategory": "Cyber Frame Cloud",
+      "description": "# Windows Licenses (per licensed vCPU)",
+      "note": "",
+      "prices": {
+        "All": [
+          11.5,
+          11,
+          10.5,
+          10,
+          9.5,
+          9,
+          8.5
+        ]
+      },
+      "skus": {
+        "All": "SFCWMSENS"
+      }
+    },
+    {
+      "id": "service-66",
+      "category": "Cyber Workspace",
+      "subcategory": "Cyber Employee",
+      "description": "# Cyber Employee Agents",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "G1": [
+          12,
+          11.69,
+          11.45,
+          11.2,
+          10.96,
+          10.72,
+          10.48
+        ]
+      },
+      "skus": {
+        "G1": "SWWAMSENS"
+      }
+    },
+    {
+      "id": "service-67",
+      "category": "Cyber Workspace",
+      "subcategory": "Cyber Employee",
+      "description": "# Cyber Employee Usage Units",
+      "note": "",
+      "prices": {
+        "G1": [
+          1,
+          0.97,
+          0.95,
+          0.93,
+          0.91,
+          0.89,
+          0.87
+        ]
+      },
+      "skus": {
+        "G1": "SWWBMSENS"
+      }
+    },
+    {
+      "id": "service-68",
+      "category": "Acronis Cyber\r\nFiles Cloud",
+      "subcategory": "Per User",
+      "description": "# of Cyber Files Users",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          1.7,
+          1.51,
+          1.36,
+          1.12,
+          0.99,
+          0.93,
+          0.89
+        ]
+      },
+      "skus": {
+        "All": "SPIAMSENS"
+      }
+    },
+    {
+      "id": "service-69",
+      "category": "Acronis Cyber\r\nFiles Cloud",
+      "subcategory": "Per User",
+      "description": "Cyber Files Cloud Acronis Hosted Storage (for per User Model)",
+      "note": "",
+      "prices": {
+        "G1": [
+          0.0435,
+          0.0387,
+          0.0341,
+          0.0286,
+          0.0232,
+          0.0218,
+          0.0209
+        ],
+        "G2": [
+          0.0546,
+          0.0486,
+          0.0428,
+          0.036,
+          0.0292,
+          0.0274,
+          0.0263
+        ]
+      },
+      "skus": {
+        "G1": "SUVAMSENS",
+        "G2": "SUV2MSENS"
+      }
+    },
+    {
+      "id": "service-70",
+      "category": "Acronis Cyber\r\nFiles Cloud",
+      "subcategory": "Per GB",
+      "description": "Cyber Files Cloud Acronis Hosted Storage (for per GB Model)",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "G1": [
+          0.124,
+          0.1104,
+          0.0972,
+          0.0885,
+          0.0832,
+          0.0799,
+          0.0767
+        ],
+        "G2": [
+          0.134,
+          0.1193,
+          0.105,
+          0.0956,
+          0.0899,
+          0.0863,
+          0.0828
+        ]
+      },
+      "skus": {
+        "G1": "SP1AMSENS",
+        "G2": "SP12MSENS"
+      }
+    },
+    {
+      "id": "service-71",
+      "category": "Acronis Cyber\r\nFiles Cloud",
+      "subcategory": "Per GB",
+      "description": "Cyber Files Cloud Service Provider Hosted Storage",
+      "note": "",
+      "prices": {
+        "All": [
+          0.072,
+          0.0641,
+          0.0564,
+          0.0513,
+          0.0482,
+          0.0463,
+          0.0444
+        ]
+      },
+      "skus": {
+        "All": "SP2AMSENS"
+      }
+    },
+    {
+      "id": "service-72",
+      "category": "Acronis Cyber Infrastructure",
+      "subcategory": "",
+      "description": "Storage Required for S3/iSCSI/NFS/Compute (Per GB)",
+      "note": "Disponible de forma independiente",
+      "prices": {
+        "All": [
+          0.015,
+          0.0134,
+          0.0118,
+          0.0104,
+          0.0094,
+          0.009,
+          0.0086
+        ]
+      },
+      "skus": {
+        "All": "SCVAMSENS"
+      }
+    }
+  ]
+}
