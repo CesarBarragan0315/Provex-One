@@ -924,6 +924,27 @@
     {
       "id": "solution-38",
       "category": "Cyber Frame",
+      "subcategory": "Cyber Frame Local",
+      "description": "Used Storage for S3, iSCSI, NFS, and SMB (Per GB)",
+      "note": "",
+      "prices": {
+        "All": [
+          0.015,
+          0.0134,
+          0.0118,
+          0.0104,
+          0.0094,
+          0.009,
+          0.0086
+        ]
+      },
+      "skus": {
+        "All": "SFLSMSENS"
+      }
+    },
+    {
+      "id": "solution-39",
+      "category": "Cyber Frame",
       "subcategory": "Cyber Frame Cloud",
       "description": "# Used Standard vCPUs",
       "note": "Disponible de forma independiente",
@@ -943,7 +964,7 @@
       }
     },
     {
-      "id": "solution-39",
+      "id": "solution-40",
       "category": "Cyber Frame",
       "subcategory": "Cyber Frame Cloud",
       "description": "# GB of used Standard RAM",
@@ -964,7 +985,7 @@
       }
     },
     {
-      "id": "solution-40",
+      "id": "solution-41",
       "category": "Cyber Frame",
       "subcategory": "Cyber Frame Cloud",
       "description": "Cyber Frame Cloud Block Storage",
@@ -985,7 +1006,7 @@
       }
     },
     {
-      "id": "solution-41",
+      "id": "solution-42",
       "category": "Cyber Frame",
       "subcategory": "Cyber Frame Cloud",
       "description": "# Public IPs for Cyber Frame Cloud",
@@ -1006,7 +1027,7 @@
       }
     },
     {
-      "id": "solution-42",
+      "id": "solution-43",
       "category": "Cyber Frame",
       "subcategory": "Cyber Frame Cloud",
       "description": "# Windows Licenses (per licensed vCPU)",
@@ -1027,7 +1048,7 @@
       }
     },
     {
-      "id": "solution-43",
+      "id": "solution-44",
       "category": "Cyber Workspace",
       "subcategory": "Cyber Employee",
       "description": "# Cyber Employee Agents",
@@ -1048,7 +1069,7 @@
       }
     },
     {
-      "id": "solution-44",
+      "id": "solution-45",
       "category": "Cyber Workspace",
       "subcategory": "Cyber Employee",
       "description": "# Cyber Employee Usage Units",
@@ -1069,7 +1090,7 @@
       }
     },
     {
-      "id": "solution-45",
+      "id": "solution-46",
       "category": "Cyber Files Cloud",
       "subcategory": "Per User",
       "description": "# of Cyber Files Users",
@@ -1090,7 +1111,7 @@
       }
     },
     {
-      "id": "solution-46",
+      "id": "solution-47",
       "category": "Cyber Files Cloud",
       "subcategory": "Per User",
       "description": "Cyber Files Cloud Acronis Hosted Storage (for per User Model)",
@@ -1121,7 +1142,7 @@
       }
     },
     {
-      "id": "solution-47",
+      "id": "solution-48",
       "category": "Cyber Files Cloud",
       "subcategory": "Per GB",
       "description": "Cyber Files Cloud Acronis Hosted Storage (for per GB Model)",
@@ -1152,7 +1173,7 @@
       }
     },
     {
-      "id": "solution-48",
+      "id": "solution-49",
       "category": "Cyber Files Cloud",
       "subcategory": "Per GB",
       "description": "Cyber Files Cloud Service Provider Hosted Storage",
@@ -1170,27 +1191,6 @@
       },
       "skus": {
         "All": "SP2AMSENS"
-      }
-    },
-    {
-      "id": "solution-49",
-      "category": "Acronis Cyber Infrastructure",
-      "subcategory": "",
-      "description": "Storage Required for S3/iSCSI/NFS/Compute (Per GB)",
-      "note": "Disponible de forma independiente",
-      "prices": {
-        "All": [
-          0.015,
-          0.0134,
-          0.0118,
-          0.0104,
-          0.0094,
-          0.009,
-          0.0086
-        ]
-      },
-      "skus": {
-        "All": "SCVAMSENS"
       }
     }
   ],
@@ -1671,7 +1671,7 @@
       "id": "service-28",
       "category": "Backup",
       "subcategory": "Per Workload",
-      "description": "# Microsoft 365 Seats (for SP/Customer/Azure/Google Hosted Storage)",
+      "description": "# Microsoft 365 Seats (for SP/Customer/Azure Hosted Storage)",
       "note": "",
       "prices": {
         "All": [
@@ -1713,7 +1713,7 @@
       "id": "service-30",
       "category": "Backup",
       "subcategory": "Per Workload",
-      "description": "# Entra ID Seats (for SP/Azure/Google Hosted Storage)",
+      "description": "# Entra ID Seats (for SP/Azure Hosted Storage)",
       "note": "",
       "prices": {
         "All": [
@@ -1765,7 +1765,7 @@
       "id": "service-32",
       "category": "Backup",
       "subcategory": "Per Workload",
-      "description": "# Google Workspace Seats (for SP/Azure/Google Hosted Storage)",
+      "description": "# Google Workspace Seats (for SP/Azure Hosted Storage)",
       "note": "",
       "prices": {
         "All": [
@@ -1838,7 +1838,7 @@
       "id": "service-35",
       "category": "Backup",
       "subcategory": "Per Workload",
-      "description": "Acronis Cloud Storage at Azure/Google datacenters (for Per Workload model)",
+      "description": "Acronis Cloud Storage at Azure datacenters (for Per Workload model)",
       "note": "",
       "prices": {
         "All": [
@@ -1852,7 +1852,7 @@
         ]
       },
       "skus": {
-        "All": "SPXAMSENS"
+        "All": "SQ1AMSENS"
       }
     },
     {
@@ -1890,7 +1890,7 @@
       "id": "service-37",
       "category": "Backup",
       "subcategory": "Per GB",
-      "description": "Acronis Cloud Storage at Azure/Google datacenters (for Per GB model)",
+      "description": "Acronis Cloud Storage at Azure datacenters (for Per GB model)",
       "note": "",
       "prices": {
         "All": [
@@ -1904,7 +1904,7 @@
         ]
       },
       "skus": {
-        "All": "SP3AMSENS"
+        "All": "SQ2AMSENS"
       }
     },
     {
@@ -2267,7 +2267,7 @@
       "id": "service-54",
       "category": "Email Archiving",
       "subcategory": "Per Workload",
-      "description": "# Microsoft 365 Archiving Seats (for SP/Azure/Google Hosted storage)",
+      "description": "# Microsoft 365 Archiving Seats (for SP/Azure Hosted storage)",
       "note": "",
       "prices": {
         "All": [
@@ -2288,7 +2288,7 @@
       "id": "service-55",
       "category": "Email Archiving",
       "subcategory": "Per Workload",
-      "description": "Acronis Cloud Storage for Email Archiving at Azure/Google datacenters (for Per Workload model)",
+      "description": "Acronis Cloud Storage for Email Archiving at Azure datacenters (for Per Workload model)",
       "note": "",
       "prices": {
         "All": [
@@ -2302,7 +2302,7 @@
         ]
       },
       "skus": {
-        "All": "SHXAMSENS"
+        "All": "SH1AMSENS"
       }
     },
     {
@@ -2361,7 +2361,7 @@
       "id": "service-58",
       "category": "Email Archiving",
       "subcategory": "Per GB",
-      "description": "Acronis Cloud Storage for Email Archiving at Azure/Google datacenters (for Per GB model)",
+      "description": "Acronis Cloud Storage for Email Archiving at Azure datacenters (for Per GB model)",
       "note": "",
       "prices": {
         "All": [
@@ -2375,7 +2375,7 @@
         ]
       },
       "skus": {
-        "All": "SH3AMSENS"
+        "All": "SH2AMSENS"
       }
     },
     {
@@ -2402,6 +2402,27 @@
     {
       "id": "service-61",
       "category": "Cyber Frame",
+      "subcategory": "Cyber Frame Local",
+      "description": "Used Storage for S3, iSCSI, NFS, and SMB (Per GB)",
+      "note": "",
+      "prices": {
+        "All": [
+          0.015,
+          0.0134,
+          0.0118,
+          0.0104,
+          0.0094,
+          0.009,
+          0.0086
+        ]
+      },
+      "skus": {
+        "All": "SFLSMSENS"
+      }
+    },
+    {
+      "id": "service-62",
+      "category": "Cyber Frame",
       "subcategory": "Cyber Frame Cloud",
       "description": "# Used Standard vCPUs",
       "note": "Disponible de forma independiente",
@@ -2421,7 +2442,7 @@
       }
     },
     {
-      "id": "service-62",
+      "id": "service-63",
       "category": "Cyber Frame",
       "subcategory": "Cyber Frame Cloud",
       "description": "# GB of used Standard RAM",
@@ -2442,7 +2463,7 @@
       }
     },
     {
-      "id": "service-63",
+      "id": "service-64",
       "category": "Cyber Frame",
       "subcategory": "Cyber Frame Cloud",
       "description": "Cyber Frame Cloud Block Storage",
@@ -2463,7 +2484,7 @@
       }
     },
     {
-      "id": "service-64",
+      "id": "service-65",
       "category": "Cyber Frame",
       "subcategory": "Cyber Frame Cloud",
       "description": "# Public IPs for Cyber Frame Cloud",
@@ -2484,7 +2505,7 @@
       }
     },
     {
-      "id": "service-65",
+      "id": "service-66",
       "category": "Cyber Frame",
       "subcategory": "Cyber Frame Cloud",
       "description": "# Windows Licenses (per licensed vCPU)",
@@ -2505,7 +2526,7 @@
       }
     },
     {
-      "id": "service-66",
+      "id": "service-67",
       "category": "Cyber Workspace",
       "subcategory": "Cyber Employee",
       "description": "# Cyber Employee Agents",
@@ -2526,7 +2547,7 @@
       }
     },
     {
-      "id": "service-67",
+      "id": "service-68",
       "category": "Cyber Workspace",
       "subcategory": "Cyber Employee",
       "description": "# Cyber Employee Usage Units",
@@ -2547,7 +2568,7 @@
       }
     },
     {
-      "id": "service-68",
+      "id": "service-69",
       "category": "Acronis Cyber\r\nFiles Cloud",
       "subcategory": "Per User",
       "description": "# of Cyber Files Users",
@@ -2568,7 +2589,7 @@
       }
     },
     {
-      "id": "service-69",
+      "id": "service-70",
       "category": "Acronis Cyber\r\nFiles Cloud",
       "subcategory": "Per User",
       "description": "Cyber Files Cloud Acronis Hosted Storage (for per User Model)",
@@ -2599,7 +2620,7 @@
       }
     },
     {
-      "id": "service-70",
+      "id": "service-71",
       "category": "Acronis Cyber\r\nFiles Cloud",
       "subcategory": "Per GB",
       "description": "Cyber Files Cloud Acronis Hosted Storage (for per GB Model)",
@@ -2630,7 +2651,7 @@
       }
     },
     {
-      "id": "service-71",
+      "id": "service-72",
       "category": "Acronis Cyber\r\nFiles Cloud",
       "subcategory": "Per GB",
       "description": "Cyber Files Cloud Service Provider Hosted Storage",
@@ -2648,27 +2669,6 @@
       },
       "skus": {
         "All": "SP2AMSENS"
-      }
-    },
-    {
-      "id": "service-72",
-      "category": "Acronis Cyber Infrastructure",
-      "subcategory": "",
-      "description": "Storage Required for S3/iSCSI/NFS/Compute (Per GB)",
-      "note": "Disponible de forma independiente",
-      "prices": {
-        "All": [
-          0.015,
-          0.0134,
-          0.0118,
-          0.0104,
-          0.0094,
-          0.009,
-          0.0086
-        ]
-      },
-      "skus": {
-        "All": "SCVAMSENS"
       }
     }
   ]
