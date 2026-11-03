@@ -416,25 +416,49 @@ export function parseAcronisWorkbook(workbook) {
 
 // ── INTEGRACIÓN CON GITHUB API ──
 
-function sanitizeGithubHeaderValue(value) {
-  return String(value ?? "")
-    .replace(/\r?\n/g, " ")
-    .replace(/[\u0080-\uFFFF]/g, "");
+function cleanGitHubToken(raw) {
+  if (!raw) return "";
+  let t = String(raw).trim();
+  // Quitar prefijo 'Bearer ' o 'token: ' si el usuario lo incluyó
+  t = t.replace(/^bearer\s+/i, "").replace(/^token:\s*/i, "");
+  // Quitar comillas simples, dobles o tipográficas (“ ” ‘ ’ ` )
+  t = t.replace(/^["'“”‘’`]+|["'“”‘’`]+$/g, "");
+  // Conservar EXCLUSIVAMENTE caracteres ASCII imprimibles sin espacios (código 33 a 126)
+  // Esto elimina cualquier caracter unicode, salto de línea, espacios invisibles, etc.
+  t = t.replace(/[^\x21-\x7E]/g, "");
+  return t;
+}
+
+function toBase64(str) {
+  const bytes = new TextEncoder().encode(str);
+  let binary = "";
+  const chunkSize = 8192;
+  for (let i = 0; i < bytes.length; i += chunkSize) {
+    binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunkSize));
+  }
+  return btoa(binary);
 }
 
 async function getGitHubFileSha(owner, repo, path, token) {
+  const cleanToken = cleanGitHubToken(token);
+  if (!cleanToken) return null;
+
   const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
-  const headers = new Headers({
-    Authorization: `Bearer ${sanitizeGithubHeaderValue(token)}`,
+  const headers = {
+    Authorization: `Bearer ${cleanToken}`,
     Accept: "application/vnd.github+json",
     "X-GitHub-Api-Version": "2022-11-28",
-  });
+  };
 
   try {
     const res = await fetch(url, { headers });
     if (res.ok) {
       const data = await res.json();
       return data.sha || null;
+    }
+    if (res.status === 404) {
+      // El archivo aún no existe en GitHub, sha es null
+      return null;
     }
   } catch (err) {
     console.warn("Could not get SHA for", path, err);
@@ -443,19 +467,22 @@ async function getGitHubFileSha(owner, repo, path, token) {
 }
 
 async function putGitHubFile(owner, repo, path, jsonPayload, commitMessage, token) {
-  const sha = await getGitHubFileSha(owner, repo, path, token);
+  const cleanToken = cleanGitHubToken(token);
+  if (!cleanToken) {
+    throw new Error("El token de GitHub no es válido o está vacío. Por favor ingrésalo de nuevo.");
+  }
+
+  const sha = await getGitHubFileSha(owner, repo, path, cleanToken);
   const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
 
   const jsonString = JSON.stringify(jsonPayload, null, 2);
-  const utf8Bytes = new TextEncoder().encode(jsonString);
-  let binary = "";
-  for (let i = 0; i < utf8Bytes.length; i++) {
-    binary += String.fromCharCode(utf8Bytes[i]);
-  }
-  const base64Content = btoa(binary);
+  const base64Content = toBase64(jsonString);
+
+  // Asegurar mensaje limpio sin caracteres de control
+  const cleanMessage = String(commitMessage ?? "").replace(/[\r\n\t]/g, " ").trim();
 
   const body = {
-    message: String(commitMessage ?? "").replace(/[\u0080-\uFFFF]/g, ""),
+    message: cleanMessage,
     content: base64Content,
     branch: "master",
   };
@@ -463,12 +490,12 @@ async function putGitHubFile(owner, repo, path, jsonPayload, commitMessage, toke
     body.sha = sha;
   }
 
-  const headers = new Headers({
-    Authorization: `Bearer ${sanitizeGithubHeaderValue(token)}`,
+  const headers = {
+    Authorization: `Bearer ${cleanToken}`,
     Accept: "application/vnd.github+json",
     "Content-Type": "application/json",
     "X-GitHub-Api-Version": "2022-11-28",
-  });
+  };
 
   const res = await fetch(url, {
     method: "PUT",
@@ -478,7 +505,17 @@ async function putGitHubFile(owner, repo, path, jsonPayload, commitMessage, toke
 
   if (!res.ok) {
     const errorJson = await res.json().catch(() => ({}));
-    throw new Error(`GitHub API Error (${res.status}): ${errorJson.message || res.statusText}`);
+    let errMsg = errorJson.message || res.statusText || `HTTP ${res.status}`;
+    if (res.status === 401) {
+      errMsg = "Token de GitHub no autorizado o expirado (401 Bad credentials). Por favor genera un nuevo token en GitHub.";
+    } else if (res.status === 403) {
+      errMsg = "El token no tiene permisos suficientes para escribir en este repositorio (403 Forbidden). Asegúrate de que tenga permiso 'repo' marcado.";
+    } else if (res.status === 404) {
+      errMsg = `No se encontró el repositorio o la ruta '${path}' en GitHub (404 Not Found).`;
+    } else if (res.status === 409) {
+      errMsg = "Conflicto de versión al guardar en GitHub (409 Conflict). Intenta de nuevo en unos segundos.";
+    }
+    throw new Error(errMsg);
   }
 
   return await res.json();
@@ -526,14 +563,28 @@ export function initAdminPricing() {
     if (e.key === "Escape" && modal && !modal.hidden) closeModal(modal);
   });
 
-  // 3. Cargar token guardado
+  // 3. Cargar token guardado y sincronizarlo limpio
   const tokenInput = document.getElementById("adminGhToken");
   if (tokenInput) {
-    const savedToken = localStorage.getItem("provex_gh_token");
-    if (savedToken) tokenInput.value = savedToken;
-    tokenInput.addEventListener("input", () => {
-      localStorage.setItem("provex_gh_token", tokenInput.value.trim());
-    });
+    const savedToken = cleanGitHubToken(localStorage.getItem("provex_gh_token"));
+    if (savedToken) {
+      tokenInput.value = savedToken;
+      localStorage.setItem("provex_gh_token", savedToken);
+    }
+    const syncToken = () => {
+      const cleaned = cleanGitHubToken(tokenInput.value);
+      if (tokenInput.value !== cleaned) {
+        tokenInput.value = cleaned;
+      }
+      if (cleaned) {
+        localStorage.setItem("provex_gh_token", cleaned);
+      } else {
+        localStorage.removeItem("provex_gh_token");
+      }
+    };
+    tokenInput.addEventListener("input", syncToken);
+    tokenInput.addEventListener("change", syncToken);
+    tokenInput.addEventListener("paste", () => setTimeout(syncToken, 10));
   }
 
   // 4. File handlers: Microsoft
@@ -704,12 +755,22 @@ function updateActionButtonsState() {
 
 async function handlePublishToGitHub() {
   const publishStatus = document.getElementById("adminPublishStatus");
-  const token = localStorage.getItem("provex_gh_token");
+  const rawToken = localStorage.getItem("provex_gh_token") || document.getElementById("adminGhToken")?.value;
+  const token = cleanGitHubToken(rawToken);
 
   if (!token) {
     showError(
       publishStatus,
       "Por favor ingresa un GitHub Personal Access Token con permiso 'repo' o 'contents:write' para publicar automáticamente.",
+    );
+    document.getElementById("adminGhToken")?.focus();
+    return;
+  }
+
+  if (token.length < 20) {
+    showError(
+      publishStatus,
+      "El token de GitHub parece incompleto o inválido. Un token clásico comienza por 'ghp_' y uno de grano fino por 'github_pat_'.",
     );
     document.getElementById("adminGhToken")?.focus();
     return;
@@ -739,7 +800,7 @@ async function handlePublishToGitHub() {
         repo,
         "products.json",
         state.parsedMicrosoft,
-        `feat(precios): actualización Microsoft por analista.tecnico (${dateStr})`,
+        `feat(precios): actualizacion Microsoft por analista.tecnico (${dateStr})`,
         token,
       );
       await putGitHubFile(
@@ -747,7 +808,7 @@ async function handlePublishToGitHub() {
         repo,
         "catalogs/cloud_products.json",
         state.parsedMicrosoft,
-        `feat(precios): sincronización cloud_products.json (${dateStr})`,
+        `feat(precios): sincronizacion cloud_products.json (${dateStr})`,
         token,
       );
     }
@@ -760,7 +821,7 @@ async function handlePublishToGitHub() {
         repo,
         "catalogs/acronis_products.json",
         state.parsedAcronis,
-        `feat(precios): actualización Acronis por analista.tecnico (${dateStr})`,
+        `feat(precios): actualizacion Acronis por analista.tecnico (${dateStr})`,
         token,
       );
     }
@@ -798,7 +859,7 @@ async function handlePublishToGitHub() {
       repo,
       "catalogs/catalog_manifest.json",
       updatedManifest,
-      `feat(manifest): actualización conteos oficiales (${dateStr})`,
+      `feat(manifest): actualizacion conteos oficiales (${dateStr})`,
       token,
     );
 

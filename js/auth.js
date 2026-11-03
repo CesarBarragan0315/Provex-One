@@ -13,8 +13,8 @@ export function isPriceAdminUser() {
 }
 
 const MSAL_SOURCES = [
-  "https://alcdn.msauth.net/browser/2.38.3/js/msal-browser.min.js",
   "https://cdn.jsdelivr.net/npm/@azure/msal-browser@2.38.3/lib/msal-browser.min.js",
+  "https://unpkg.com/@azure/msal-browser@2.38.3/lib/msal-browser.min.js",
 ];
 
 const state = {
