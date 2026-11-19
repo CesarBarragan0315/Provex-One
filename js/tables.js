@@ -14,6 +14,7 @@ const TERM_LABELS = {
   anual: "1 Año",
   mensual: "1 Mes",
   trianual: "3 Años",
+  trial: "Trial (Prueba)",
   nan: "-",
   "": "-",
 };
@@ -27,6 +28,7 @@ const BILLING_LABELS = {
   anual: "Facturación Anual",
   mensual: "Facturación Mensual",
   trianual: "Facturación Trianual",
+  trial: "Sin facturación (Trial)",
   nan: "-",
   "": "-",
 };
@@ -167,19 +169,25 @@ export function getPriceDisplay(price) {
 
 function buildSummaryStrip({ currentResults, visibleDists, profitPct, qty, visibleTotal }) {
   const allPrices = [];
+  const commercialPrices = [];
 
   visibleDists.forEach((dist) => {
     currentResults[dist].forEach((product) => {
-      allPrices.push(Number(product.price) || 0);
+      const price = Number(product.price) || 0;
+      allPrices.push(price);
+      if (product.type !== "TRIAL") {
+        commercialPrices.push(price);
+      }
     });
   });
 
-  if (!allPrices.length) {
+  const targetPrices = commercialPrices.length ? commercialPrices : allPrices;
+  if (!targetPrices.length) {
     return "";
   }
 
-  const minPrice = Math.min(...allPrices);
-  const averagePrice = allPrices.reduce((sum, value) => sum + value, 0) / allPrices.length;
+  const minPrice = Math.min(...targetPrices);
+  const averagePrice = targetPrices.reduce((sum, value) => sum + value, 0) / targetPrices.length;
   const marginRatio = Math.min(0.99, profitPct / 100);
   const minimumSale = (minPrice / (1 - marginRatio)) * qty;
 
@@ -256,9 +264,10 @@ function buildDistributorCard({ dist, products, bestByName, profitPct, qty }) {
       const profit = saleTotal - costTotal;
       const productDisplayName = getComparableName(product);
       const comparisonKey = getComparisonKey(product);
-      const isBestPrice = unitPrice === bestByName[comparisonKey];
       const { tagClass, label } = getTypeMeta(product.type);
       const isPerp = product.type === "PERPETUO" || product.strictPeriodKey === "onetime_onetime";
+      const isTrial = product.type === "TRIAL";
+      const isBestPrice = !isTrial && unitPrice === bestByName[comparisonKey];
 
       html += `
         <tr class="${isBestPrice ? "best-price" : ""}">
@@ -283,6 +292,11 @@ function buildDistributorCard({ dist, products, bestByName, profitPct, qty }) {
                 ? `<div class="flex flex-col gap-0.5">
                     <span class="term-text font-semibold text-purple-700">De por vida (Permanente)</span>
                     <span class="text-[11px] text-muted font-medium">Pago único · Sin vencimiento</span>
+                  </div>`
+                : isTrial
+                ? `<div class="flex flex-col gap-0.5">
+                    <span class="term-text font-semibold text-amber-700">Licencia Trial${product.term ? ` (${escHtml(product.term)})` : ""}</span>
+                    <span class="text-[11px] text-muted font-medium">Evaluación · Sin facturación mensual</span>
                   </div>`
                 : `<div class="flex flex-col gap-0.5">
                     <span class="term-text font-medium text-slate-800">${product.type === "NCE" ? "Compromiso " : "Suscripción "}${escHtml(formatTerm(product.normalizedTerm || product.term))}</span>
@@ -346,6 +360,9 @@ function getBestByName(currentResults, visibleDists) {
 
   visibleDists.forEach((dist) => {
     currentResults[dist].forEach((product) => {
+      if (product.type === "TRIAL") {
+        return;
+      }
       const productName = getComparisonKey(product);
       const unitPrice = Number(product.price) || 0;
       if (!bestByName[productName] || unitPrice < bestByName[productName]) {
@@ -368,6 +385,10 @@ function getComparisonKey(product) {
 function getTypeMeta(type) {
   if (type === "NCE") {
     return { tagClass: "tag-nce", label: "NCE" };
+  }
+
+  if (type === "TRIAL") {
+    return { tagClass: "tag-trial", label: "TRIAL" };
   }
 
   if (type === "SUSCRIPCION") {

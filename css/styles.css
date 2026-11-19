@@ -1141,6 +1141,10 @@ tr:hover td      { background: rgba(21, 101, 192, 0.035); }
   color: var(--corp-purple);
 }
 
+.cloud-section-tab[data-section="TRIAL"].active {
+  color: #B45309;
+}
+
 .section-dot {
   width: 8px;
   height: 8px;
@@ -1163,6 +1167,11 @@ tr:hover td      { background: rgba(21, 101, 192, 0.035); }
   box-shadow: 0 0 0 3px rgba(106, 63, 160, 0.20);
 }
 
+.dot-trial {
+  background: #D97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.20);
+}
+
 /* ── TAGS ─────────────────────────────────────────── */
 .tag-pill  {
   display: inline-block;
@@ -1173,9 +1182,10 @@ tr:hover td      { background: rgba(21, 101, 192, 0.035); }
   letter-spacing: 0.03em;
   white-space: nowrap;
 }
-.tag-nce  { background: rgba(21, 101, 192, 0.12); color: var(--corp-blue); }
-.tag-subs { background: rgba(42, 191, 223, 0.15); color: #0F84A0; }
-.tag-perp { background: rgba(106, 63, 160, 0.15); color: var(--corp-purple); }
+.tag-nce   { background: rgba(21, 101, 192, 0.12); color: var(--corp-blue); }
+.tag-subs  { background: rgba(42, 191, 223, 0.15); color: #0F84A0; }
+.tag-perp  { background: rgba(106, 63, 160, 0.15); color: var(--corp-purple); }
+.tag-trial { background: rgba(245, 158, 11, 0.16); color: #B45309; }
 .tag-kaspersky { background: rgba(0, 168, 142, 0.14); color: #008772; }
 .tag-renewal { background: rgba(245, 158, 11, 0.15); color: #B45309; }
 .tag-base { background: rgba(16, 185, 129, 0.15); color: #047857; }

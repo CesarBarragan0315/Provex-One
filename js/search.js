@@ -14,6 +14,7 @@ const TYPE_OPTION_DEFS = [
   { value: "NCE", label: "NCE" },
   { value: "SUSCRIPCION", label: "Software Suscripción" },
   { value: "PERPETUO", label: "Perpetuo (Pago único)" },
+  { value: "TRIAL", label: "Trials" },
 ];
 const SEGMENT_OPTION_DEFS = [
   { value: "Commercial", label: "Commercial" },
@@ -24,12 +25,14 @@ const TERM_OPTION_DEFS = [
   { value: "anual", label: "1 Año (P1Y)" },
   { value: "trianual", label: "3 Años (P3Y)" },
   { value: "onetime", label: "Pago único (Perpetuo)" },
+  { value: "trial", label: "Trial (Prueba)" },
 ];
 const BILLING_OPTION_DEFS = [
   { value: "mensual", label: "Pago Mensual" },
   { value: "anual", label: "Pago Anual" },
   { value: "trianual", label: "Pago Trianual" },
   { value: "onetime", label: "Pago único (One-Time)" },
+  { value: "trial", label: "Sin facturación (Trial)" },
 ];
 
 // Abreviaturas y aliases de busqueda. Cada palabra del query se expande
@@ -235,12 +238,17 @@ function bindEvents() {
       if (elements.billingFilter) elements.billingFilter.value = "onetime";
       state.autoSelectedFilters.term = true;
       state.autoSelectedFilters.billing = true;
+    } else if (currentSection === "TRIAL") {
+      if (elements.termFilter) elements.termFilter.value = "trial";
+      if (elements.billingFilter) elements.billingFilter.value = "trial";
+      state.autoSelectedFilters.term = true;
+      state.autoSelectedFilters.billing = true;
     } else {
-      if (elements.termFilter && elements.termFilter.value === "onetime") {
+      if (elements.termFilter && (elements.termFilter.value === "onetime" || elements.termFilter.value === "trial")) {
         elements.termFilter.value = "";
         state.autoSelectedFilters.term = false;
       }
-      if (elements.billingFilter && elements.billingFilter.value === "onetime") {
+      if (elements.billingFilter && (elements.billingFilter.value === "onetime" || elements.billingFilter.value === "trial")) {
         elements.billingFilter.value = "";
         state.autoSelectedFilters.billing = false;
       }
@@ -316,12 +324,17 @@ function setCloudSection(section) {
     if (elements.billingFilter) elements.billingFilter.value = "onetime";
     state.autoSelectedFilters.term = true;
     state.autoSelectedFilters.billing = true;
+  } else if (section === "TRIAL") {
+    if (elements.termFilter) elements.termFilter.value = "trial";
+    if (elements.billingFilter) elements.billingFilter.value = "trial";
+    state.autoSelectedFilters.term = true;
+    state.autoSelectedFilters.billing = true;
   } else {
-    if (elements.termFilter && elements.termFilter.value === "onetime") {
+    if (elements.termFilter && (elements.termFilter.value === "onetime" || elements.termFilter.value === "trial")) {
       elements.termFilter.value = "";
       state.autoSelectedFilters.term = false;
     }
-    if (elements.billingFilter && elements.billingFilter.value === "onetime") {
+    if (elements.billingFilter && (elements.billingFilter.value === "onetime" || elements.billingFilter.value === "trial")) {
       elements.billingFilter.value = "";
       state.autoSelectedFilters.billing = false;
     }
@@ -353,6 +366,16 @@ function updateCloudSectionHelper(section) {
       elements.cloudSectionHelper.innerHTML = `
         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-semibold bg-purple-50 text-purple-800 border border-purple-200">
           💎 Licenciamiento Perpetuo: Licencia permanente de por vida (Pago único, sin cuotas ni vencimiento)
+        </span>
+      `;
+    }
+  } else if (section === "TRIAL") {
+    if (elements.termFilterGroup) elements.termFilterGroup.hidden = true;
+    if (elements.billingFilterGroup) elements.billingFilterGroup.hidden = true;
+    if (elements.cloudSectionHelper) {
+      elements.cloudSectionHelper.innerHTML = `
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200">
+          🧪 Licencias Trial: Licencias de prueba/evaluación (sin facturación mensual ni anual)
         </span>
       `;
     }
@@ -773,7 +796,6 @@ function updateSearchSuggestions() {
 
   const activeFilters = getActiveSecondaryFilters();
   const selectedIds = new Set(state.selectedProducts.map((selection) => selection.id));
-  const seenNames = new Set();
   const expandedQuery = expandAliases(query);
   const criteria = {
     currentInput: {
@@ -784,7 +806,7 @@ function updateSearchSuggestions() {
     ...activeFilters,
   };
 
-  const candidates = [];
+  const candidatesByName = new Map();
   for (const product of state.products) {
     const productName = product.canonicalName || String(product.name || "").trim();
     const candidateSelectionId = getSelectedProductId(productName, activeFilters, {
@@ -794,7 +816,12 @@ function updateSearchSuggestions() {
       billing: Boolean(activeFilters.billing),
     });
 
-    if (!productName || selectedIds.has(candidateSelectionId) || seenNames.has(productName)) {
+    if (!productName || selectedIds.has(candidateSelectionId)) {
+      continue;
+    }
+
+    const existingCandidate = candidatesByName.get(productName);
+    if (existingCandidate && (existingCandidate.type !== "TRIAL" || product.type === "TRIAL")) {
       continue;
     }
 
@@ -810,11 +837,16 @@ function updateSearchSuggestions() {
     }
 
     const score = getProductRelevanceScore(product, criteria);
-    candidates.push({ name: productName, type: product.type, score });
-    seenNames.add(productName);
+    candidatesByName.set(productName, { name: productName, type: product.type, score });
   }
 
-  candidates.sort((a, b) => b.score - a.score);
+  const candidates = Array.from(candidatesByName.values());
+  candidates.sort((a, b) => {
+    if ((a.type === "TRIAL") !== (b.type === "TRIAL")) {
+      return a.type === "TRIAL" ? 1 : -1;
+    }
+    return b.score - a.score;
+  });
   state.searchSuggestions = candidates.slice(0, SUGGESTION_LIMIT);
   state.activeSuggestionIndex = -1;
   renderSearchSuggestions();
@@ -845,6 +877,8 @@ function renderSearchSuggestions() {
           ? '<span class="tag-pill tag-nce text-[10px] uppercase font-bold">NCE</span>'
           : type === "PERPETUO"
           ? '<span class="tag-pill tag-perp text-[10px] uppercase font-bold">PERPETUO</span>'
+          : type === "TRIAL"
+          ? '<span class="tag-pill tag-trial text-[10px] uppercase font-bold">TRIAL</span>'
           : '<span class="tag-pill tag-subs text-[10px] uppercase font-bold">SUBS</span>';
 
       return `
@@ -1088,6 +1122,12 @@ function compareProducts(left, right, selectedProducts, criteria = null) {
 
   if (leftOrder !== rightOrder) {
     return leftOrder - rightOrder;
+  }
+
+  const leftIsTrial = left.type === "TRIAL";
+  const rightIsTrial = right.type === "TRIAL";
+  if (leftIsTrial !== rightIsTrial) {
+    return leftIsTrial ? 1 : -1;
   }
 
   if (
@@ -1353,7 +1393,7 @@ function getSearchWarningMessage() {
         .slice(0, 2)
         .map((selection) => selection.name)
         .join(", ");
-      return `${sampleNames} existe en varios tipos. Elige "Tipo" para evitar mezclar NCE, Suscripción o Perpetuo.`;
+      return `${sampleNames} existe en varios tipos. Elige "Sección" para evitar mezclar NCE, Suscripción, Perpetuo o Trial.`;
     }
   }
 
@@ -1513,33 +1553,45 @@ function normalizeText(value) {
 
 function enrichProduct(product) {
   const canonicalName = String(product.canonicalName || getCanonicalProductName(product.name || "")).trim();
-  const normalizedTerm = String(product.normalizedTerm || canonicalizeTerm(product)).trim();
-  const normalizedBilling = String(product.normalizedBilling || canonicalizeBilling(product)).trim();
-  const strictPeriodKey = String(
-    product.strictPeriodKey ||
-      getStrictPeriodKey({
-        ...product,
-        normalizedTerm,
-        normalizedBilling,
-      }),
-  ).trim();
-  const comparisonKey = [
-    canonicalName,
-    strictPeriodKey || "sin_periodo",
-    product.type || "",
-    normalizeText(product.segment),
-  ].join("__");
   const rawType = String(product.type || "").trim().toUpperCase();
   const type =
     rawType === "NCE"
       ? "NCE"
+      : rawType === "TRIAL" || rawType === "TRIALS"
+      ? "TRIAL"
       : rawType === "PERPETUO" || rawType === "PERPETUAL"
       ? "PERPETUO"
       : "SUSCRIPCION";
+  const normalizedTerm =
+    type === "TRIAL"
+      ? "trial"
+      : String(product.normalizedTerm || canonicalizeTerm(product)).trim();
+  const normalizedBilling =
+    type === "TRIAL"
+      ? "trial"
+      : String(product.normalizedBilling || canonicalizeBilling(product)).trim();
+  const strictPeriodKey =
+    type === "TRIAL"
+      ? "trial"
+      : String(
+          product.strictPeriodKey ||
+            getStrictPeriodKey({
+              ...product,
+              normalizedTerm,
+              normalizedBilling,
+            }),
+        ).trim();
+  const comparisonKey = [
+    canonicalName,
+    strictPeriodKey || "sin_periodo",
+    type,
+    normalizeText(product.segment),
+  ].join("__");
   const searchText = normalizeText(`${canonicalName} ${product.name || ""} ${product.partNumber || ""} ${product.productId || ""}`);
   return {
     ...product,
     type,
+    billing: type === "TRIAL" ? "" : product.billing,
     canonicalName,
     normalizedTerm,
     normalizedBilling,

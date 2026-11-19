@@ -139,6 +139,7 @@ function getStrictPeriodKey(term, billing) {
 
 export function parseMicrosoftWorkbook(workbook) {
   const items = [];
+  const seenKeys = new Set();
   const sheetNames = workbook.SheetNames || [];
 
   for (const sheetName of sheetNames) {
@@ -158,6 +159,7 @@ export function parseMicrosoftWorkbook(workbook) {
     const billingCol = resolveColumn(headers, "BillingPlan", "Billing Plan", "Billing");
     const priceCol = resolveColumn(headers, "PARTNER PRICE", "Partner Price", "UnitPrice", "Unit Price", "Unit_Price", "Price");
     const segmentCol = resolveColumn(headers, "Segment");
+    const tagsCol = resolveColumn(headers, "Tags", "Tag");
 
     // Tipo por defecto por nombre de hoja
     let defaultType = "NCE";
@@ -197,10 +199,23 @@ export function parseMicrosoftWorkbook(workbook) {
       const partNumber = (partCol ? safeStr(row[partCol]) : "") || productId;
       let rawTerm = termCol ? safeStr(row[termCol]) : "";
       let rawBilling = billingCol ? safeStr(row[billingCol]) : "";
+      if (["none", "nan"].includes(rawBilling.toLowerCase())) rawBilling = "";
+      const rawTags = tagsCol ? safeStr(row[tagsCol]) : "";
+      const tagsUpper = rawTags.toUpperCase();
       const erp = erpCol ? safeFloat(row[erpCol]) : 0;
 
+      const isTrial =
+        tagsUpper.includes("TRIAL") ||
+        (defaultType === "NCE" &&
+          !rawBilling &&
+          (rawTerm.toUpperCase().includes("P1M") ||
+            partNumber.toUpperCase().endsWith(":P1M") ||
+            nameUpper.includes("TRIAL")));
+
       let rowType = defaultType;
-      if (defaultType === "PERPETUO") {
+      if (isTrial) {
+        rowType = "TRIAL";
+      } else if (defaultType === "PERPETUO") {
         rowType = "PERPETUO";
       } else if (sLower.includes("software")) {
         rowType = "SUSCRIPCION";
@@ -224,11 +239,20 @@ export function parseMicrosoftWorkbook(workbook) {
         normalizedTerm = "onetime";
         normalizedBilling = "onetime";
         strictPeriodKey = "onetime_onetime";
+      } else if (rowType === "TRIAL") {
+        cleanBilling = "";
+        normalizedTerm = "trial";
+        normalizedBilling = "trial";
+        strictPeriodKey = "trial";
       } else {
         normalizedTerm = canonicalizeTerm(cleanTerm, partNumber, name);
         normalizedBilling = canonicalizeBilling(cleanBilling, partNumber, name);
         strictPeriodKey = getStrictPeriodKey(normalizedTerm, normalizedBilling);
       }
+
+      const dedupKey = `${rowType}|${partNumber}|${normalizedTerm}|${normalizedBilling}|${normalizedSegment}`;
+      if (seenKeys.has(dedupKey)) continue;
+      seenKeys.add(dedupKey);
 
       items.push({
         area: "cloud",
@@ -679,6 +703,7 @@ async function handleMicrosoftFile(file) {
     const nceCount = items.filter((i) => i.type === "NCE").length;
     const subsCount = items.filter((i) => i.type === "SUSCRIPCION").length;
     const perpCount = items.filter((i) => i.type === "PERPETUO").length;
+    const trialCount = items.filter((i) => i.type === "TRIAL").length;
 
     state.microsoftMeta = {
       filename: file.name,
@@ -686,6 +711,7 @@ async function handleMicrosoftFile(file) {
       nce: nceCount,
       subs: subsCount,
       perp: perpCount,
+      trial: trialCount,
     };
 
     showSuccess(
@@ -694,7 +720,8 @@ async function handleMicrosoftFile(file) {
         `<strong>${items.length.toLocaleString("es-CO")}</strong> productos válidos (` +
         `${nceCount.toLocaleString("es-CO")} NCE · ` +
         `${subsCount.toLocaleString("es-CO")} Suscripción · ` +
-        `${perpCount.toLocaleString("es-CO")} Perpetuo)`,
+        `${perpCount.toLocaleString("es-CO")} Perpetuo · ` +
+        `${trialCount.toLocaleString("es-CO")} Trials)`,
     );
 
     document.getElementById("adminDownloadMsBtn")?.removeAttribute("disabled");
@@ -826,9 +853,23 @@ async function handlePublishToGitHub() {
       );
     }
 
-    // 3. Actualizar manifest
+    // 3. Actualizar manifest (preservando conteos actuales de catalogos no modificados)
     showLoading(publishStatus, "Actualizando catálogo manifiesto...");
-    let manifestSha = await getGitHubFileSha(owner, repo, "catalogs/catalog_manifest.json", token);
+    let currentCounts = { cloud: 3304, acronis: 106, kaspersky: 209 };
+    try {
+      const currentManifestRes = await fetch("./catalogs/catalog_manifest.json", { cache: "no-store" });
+      if (currentManifestRes.ok) {
+        const currentManifest = await currentManifestRes.json();
+        (currentManifest.areas || []).forEach((area) => {
+          if (area?.id && Number.isFinite(Number(area.records))) {
+            currentCounts[area.id] = Number(area.records);
+          }
+        });
+      }
+    } catch {
+      // fallback to defaults above
+    }
+
     const updatedManifest = {
       areas: [
         {
@@ -836,21 +877,23 @@ async function handlePublishToGitHub() {
           label: "Licencias Microsoft",
           kind: "comparison",
           catalog: "cloud_products.json",
-          records: state.parsedMicrosoft ? state.parsedMicrosoft.length : 2434,
+          records: state.parsedMicrosoft ? state.parsedMicrosoft.length : currentCounts.cloud,
         },
         {
           id: "acronis",
           label: "Calculadora Acronis",
           kind: "calculator",
           catalog: "acronis_products.json",
-          records: state.parsedAcronis ? state.parsedAcronis.solution.length + state.parsedAcronis.service.length : 106,
+          records: state.parsedAcronis
+            ? state.parsedAcronis.solution.length + state.parsedAcronis.service.length
+            : currentCounts.acronis,
         },
         {
           id: "kaspersky",
           label: "Licencias Kaspersky",
           kind: "comparison",
           catalog: "kaspersky_products.json",
-          records: 209,
+          records: currentCounts.kaspersky,
         },
       ],
     };

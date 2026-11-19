@@ -1,4 +1,5 @@
 from pathlib import Path
+import re
 import pandas as pd
 
 from extractors.common import (
@@ -57,6 +58,11 @@ def build_cloud_product(
         normalized_term = "onetime"
         normalized_billing = "onetime"
         strict_period_key = "onetime_onetime"
+    elif product_type == "TRIAL":
+        clean_billing = ""
+        normalized_term = "trial"
+        normalized_billing = "trial"
+        strict_period_key = "trial"
     else:
         normalized_term = canonicalize_term(clean_term, clean_part_number, clean_name)
         normalized_billing = canonicalize_billing(clean_billing, clean_part_number, clean_name)
@@ -123,6 +129,7 @@ def extract_lol(path):
                 "Price",
             )
             segment_col = resolve_column(df.columns, "Segment")
+            tags_col = resolve_column(df.columns, "Tags", "Tag")
 
             # Determine default type from sheet or filename
             default_type = "NCE"
@@ -150,12 +157,31 @@ def extract_lol(path):
                 ) or product_id
                 raw_term = safe_str(row.get(term_col)) if term_col else ""
                 raw_billing = safe_str(row.get(billing_col)) if billing_col else ""
+                if raw_billing.lower() in ("none", "nan"):
+                    raw_billing = ""
                 raw_segment = safe_str(row.get(segment_col)) if segment_col else ""
+                raw_tags = safe_str(row.get(tags_col)) if tags_col else ""
                 erp = safe_float(row.get(erp_col, 0)) if erp_col else 0.0
 
-                # Fine-grained classification into NCE, SUSCRIPCION (Software Subscriptions), or PERPETUO
+                # Fine-grained classification into TRIAL, NCE, SUSCRIPCION, or PERPETUO
                 row_type = default_type
-                if default_type == "PERPETUO":
+                tags_upper = raw_tags.upper()
+                name_lower = name.lower()
+                part_upper = part_number.upper()
+                term_upper = raw_term.upper()
+                is_trial = "TRIAL" in tags_upper or (
+                    default_type == "NCE"
+                    and not raw_billing
+                    and (
+                        "P1M" in term_upper
+                        or part_upper.endswith(":P1M")
+                        or "trial" in name_lower
+                    )
+                )
+
+                if is_trial:
+                    row_type = "TRIAL"
+                elif default_type == "PERPETUO":
                     row_type = "PERPETUO"
                 elif "perpetu" in path.name.lower() or "perpetual" in path.name.lower():
                     if raw_billing.lower() == "onetime" or raw_term.lower() == "onetime":
@@ -165,9 +191,9 @@ def extract_lol(path):
                 elif "software" in s_lower:
                     row_type = "SUSCRIPCION"
                 elif (
-                    "server" in name.lower()
-                    and ("1 year" in name.lower() or "3 year" in name.lower())
-                    and ("azure" in name.lower() or "esu" in name.lower() or "sql" in name.lower())
+                    "server" in name_lower
+                    and ("1 year" in name_lower or "3 year" in name_lower)
+                    and ("azure" in name_lower or "esu" in name_lower or "sql" in name_lower)
                 ):
                     row_type = "SUSCRIPCION"
 
@@ -190,26 +216,66 @@ def extract_lol(path):
     return items
 
 
+MONTH_TOKENS = [
+    (12, ("DIC", "DICIEMBRE", "DEC", "DECEMBER")),
+    (11, ("NOV", "NOVIEMBRE", "NOVEMBER")),
+    (10, ("OCT", "OCTUBRE", "OCTOBER")),
+    (9, ("SEP", "SEPT", "SEPTIEMBRE", "SEPTEMBER")),
+    (8, ("AGO", "AGOSTO", "AUG", "AUGUST")),
+    (7, ("JUL", "JULIO", "JULY")),
+    (6, ("JUN", "JUNIO", "JUNE")),
+    (5, ("MAY", "MAYO")),
+    (4, ("ABR", "ABRIL", "APR", "APRIL")),
+    (3, ("MAR", "MARZO", "MARCH")),
+    (2, ("FEB", "FEBRERO", "FEBRUARY")),
+    (1, ("ENE", "ENERO", "JAN", "JANUARY")),
+]
+
+
+def _cloud_file_sort_key(path):
+    upper = path.name.upper()
+    year_match = re.search(r"20(\d{2})|(?:ENE|FEB|MAR|ABR|MAY|JUN|JUL|AGO|SEP|OCT|NOV|DIC)(\d{2})\b", upper)
+    year = 0
+    if year_match:
+        year = 2000 + int(year_match.group(1) or year_match.group(2))
+
+    month = 0
+    for month_num, tokens in MONTH_TOKENS:
+        if any(re.search(rf"(?:^|[^A-Z]){token}(?:\d{{2}}|\b|[^A-Z])", upper) for token in tokens):
+            month = month_num
+            break
+
+    is_nueva = 1 if "NUEVA" in upper else 0
+    is_provexpress = 1 if "PROVEXPRESS" in upper else 0
+    return (year, month, is_nueva, is_provexpress, path.stat().st_mtime)
+
+
 def build_cloud_catalog(base_dir=None):
     root_dir = Path(base_dir or Path(__file__).resolve().parent.parent)
     catalog = []
 
     data_dir = root_dir / "data"
-    all_excel = [f for f in data_dir.glob("*.xlsx") if not f.name.startswith("~$")]
+    all_excel = [
+        f
+        for f in data_dir.glob("*.xlsx")
+        if not f.name.startswith("~$")
+        and "acronis" not in f.name.lower()
+        and "calculadora" not in f.name.lower()
+    ]
 
-    # Prefer newest / current month files (SEP26 Nueva -> SEP26 -> AGO26 -> etc.)
-    sep_files = [f for f in all_excel if "SEP26" in f.name.upper() or "SEPTIEMBRE" in f.name.upper()]
-    nueva_sep = [f for f in sep_files if "NUEVA" in f.name.upper()]
-    ago_files = [f for f in all_excel if "AGO26" in f.name.upper() or "AGOSTO" in f.name.upper()]
+    if not all_excel:
+        return catalog
 
-    if nueva_sep:
-        target_files = nueva_sep
-    elif sep_files:
-        target_files = sorted(sep_files, key=lambda f: f.stat().st_mtime, reverse=True)[:1]
-    elif ago_files:
-        target_files = ago_files
+    ranked = sorted(all_excel, key=_cloud_file_sort_key, reverse=True)
+    best = ranked[0]
+    best_ym = _cloud_file_sort_key(best)[:2]
+
+    # Prefer the single newest consolidated workbook; if the latest month splits NCE & Perpetual, include sibling
+    same_month = [f for f in ranked if _cloud_file_sort_key(f)[:2] == best_ym]
+    if "perpetu" in best.name.lower():
+        target_files = same_month
     else:
-        target_files = sorted(all_excel, key=lambda f: f.stat().st_mtime)[-2:] if all_excel else []
+        target_files = [best]
 
     seen_keys = set()
     for f in target_files:

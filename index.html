@@ -61,7 +61,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Provex One">
   <link rel="apple-touch-icon" sizes="180x180" href="icons/provex_icon_180.png">
-  <link rel="stylesheet" href="css/styles.css?v=20261103">
+  <link rel="stylesheet" href="css/styles.css?v=20261119">
 </head>
 <body class="app-body auth-pending bg-bg text-primary min-h-screen font-sans antialiased" style="letter-spacing:-0.022em">
   <!-- Mantenimiento para futuras actualizaciones
@@ -170,7 +170,7 @@
       </p>
       <p class="text-[13px] text-muted mb-3">Busqueda rapida y comparacion de licencias Microsoft clasificadas por seccion y periodo.</p>
 
-      <!-- 3 SECCIONES: NCE, SOFTWARE SUSCRIPCIÓN, PERPETUO -->
+      <!-- 4 SECCIONES: NCE, SOFTWARE SUSCRIPCIÓN, PERPETUO, TRIALS -->
       <div class="cloud-section-toolbar mb-4 flex flex-wrap items-center justify-between gap-3">
         <div class="cloud-section-tabs" id="cloudSectionTabs" role="tablist" aria-label="Secciones de licenciamiento Microsoft">
           <button type="button" class="cloud-section-tab active" data-section="NCE" role="tab" aria-selected="true">
@@ -184,6 +184,10 @@
           <button type="button" class="cloud-section-tab" data-section="PERPETUO" role="tab" aria-selected="false">
             <span class="section-dot dot-perp"></span>
             Perpetuo (Pago único)
+          </button>
+          <button type="button" class="cloud-section-tab" data-section="TRIAL" role="tab" aria-selected="false">
+            <span class="section-dot dot-trial"></span>
+            Trials
           </button>
           <button type="button" class="cloud-section-tab" data-section="" role="tab" aria-selected="false">
             Todas las secciones
@@ -212,6 +216,7 @@
             <option value="NCE" selected>NCE</option>
             <option value="SUSCRIPCION">Software Suscripción</option>
             <option value="PERPETUO">Perpetuo (Pago único)</option>
+            <option value="TRIAL">Trials</option>
             <option value="">Todas las secciones</option>
           </select>
         </div>
